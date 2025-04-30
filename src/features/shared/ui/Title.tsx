@@ -11,7 +11,7 @@ type TitleProps = {
 
 const baseStyles = 'text-neutral-900';
 
-const variantClasses: Record<NonNullable<TitleProps['variant']>, string> = {
+const variantStyles: Record<NonNullable<TitleProps['variant']>, string> = {
   lg: 'text-2xl md:text-4xl font-bold',
   md: 'text-xl md:text-2xl font-semibold',
   sm: 'text-lg md:text-xl font-semibold',
@@ -24,7 +24,7 @@ export const Title: FC<TitleProps> = ({
   className,
 }) => {
   return (
-    <Tag className={clsx(baseStyles, variantClasses[variant], className)}>
+    <Tag className={clsx(baseStyles, variantStyles[variant], className)}>
       {children}
     </Tag>
   );

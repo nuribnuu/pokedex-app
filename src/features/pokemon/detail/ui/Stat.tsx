@@ -1,4 +1,4 @@
-// src/features/shared/ui/Stat.tsx
+// src/features/pokemon/detail/ui/Stat.tsx
 import { FC } from 'react';
 import clsx from 'clsx';
 
@@ -15,7 +15,7 @@ const getIndicatorColor = (value: number) => {
 
 export const Stat: FC<StatProps> = ({ label, value }) => {
   return (
-    <div className='flex items-center justify-between gap-4'>
+    <div className='flex items-center justify-between gap-4 max-w-[310px] md:max-w-[450px]'>
       <span className='font-normal text-sm md:text-base text-neutral-900'>
         {label}
       </span>

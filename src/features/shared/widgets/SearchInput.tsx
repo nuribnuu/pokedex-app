@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, useState } from 'react';
-import { RoundedCloseIcon, SearchIcon } from './Icons';
+import { RoundedCloseIcon, SearchIcon } from '../ui/Icons';
 
 type SearchInputProps = {
   placeholder?: string;

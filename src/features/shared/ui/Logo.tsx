@@ -16,7 +16,7 @@ export const Logo: FC<LogoProps> = ({ hideText = false }) => {
       aria-label='Go to Home page'
     >
       <Image
-        src='/logo.svg'
+        src='/images/logo.svg'
         alt='Logo'
         className='w-7 h-7 md:w-10 md:h-10'
         width={40}

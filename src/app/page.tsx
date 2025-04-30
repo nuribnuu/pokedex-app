@@ -1,70 +1,72 @@
-// // import { ArrowLeftIcon, ChevronUpIcon, CloseIcon, RoundedCloseIcon, RulerIcon, SearchIcon, WeightIcon } from "@/features/shared/ui/Icons";
+import { PokemonEvolutionSection } from '@/features/pokemon/detail/widgets/PokemonEvolutionSection';
+import { PokemonDetailSection } from '@/features/pokemon/detail/widgets/PokemonDetailSection';
+import { Footer } from '@/features/shared/layout/Footer';
+import { Header } from '@/features/shared/layout/Header';
 
-// import { Footer } from "@/features/shared/layout/Footer";
+export default function HomePage() {
+  // Data Pokémon yang akan diteruskan ke PokemonDetailGroup
+  const pokemonData = {
+    identity: {
+      id: '001',
+      name: 'Bulbasaur',
+      description: 'A strange seed was planted on its back at birth...',
+    },
+    attributes: {
+      type: ['Grass', 'Poison'],
+      abilities: ['Overgrow', 'Chlorophyll'],
+    },
+    size: { weight: 6.9, height: 0.7 },
+    stats: [
+      { label: 'HP', value: 45 },
+      { label: 'Attack', value: 49 },
+      { label: 'Defense', value: 49 },
+      { label: 'Sp. Attack', value: 65 },
+      { label: 'Sp. Defense', value: 65 },
+      { label: 'Speed', value: 45 },
+    ],
+    artwork: { imageUrl: '/images/artwork.svg' },
+  };
 
+  return (
+    <div>
+      {/* Header Section */}
+      <Header />
 
-// // import { Description } from '@/features/shared/ui/Description';
-// // import { Heading } from '@/features/shared/ui/Title';
-// // import { Hr } from '@/features/shared/ui/Hr';
-// // import { ID } from '@/features/shared/ui/ID';
-// // import { SizeValue } from '@/features/shared/ui/SizeValue';
-// // import { Stat } from '@/features/shared/ui/Stat';
+      {/* Hero Section */}
+      <div className='h-[500px] bg-primary-300 flex items-center justify-center'>
+        Hero Section (scroll me)
+      </div>
 
-// // import { Button } from '@/features/shared/ui/Button';
-// // import { ArrowLeftIcon } from '@/features/shared/ui/Icons';
+      {/* Main Content */}
+      <div className='h-[2000px] bg-neutral-25 flex flex-col gap-2 items-start justify-center px-4 container mx-auto py-32'>
+        {/* Pokémon Detail Group */}
+        <PokemonDetailSection {...pokemonData} />
+        <PokemonEvolutionSection
+          pokemons={[
+            {
+              id: '1',
+              name: 'Bulbasaur',
+              imageUrl:
+                '/images/bulbasaur.svg',
+            },
+            {
+              id: '2',
+              name: 'Ivysaur',
+              imageUrl:
+                '/images/bulbasaur.svg',
+            },
+            {
+              id: '3',
+              name: 'Venusaur',
+              imageUrl:
+                '/images/bulbasaur.svg',
+            },
+          ]}
+        />
+      </div>
 
-// // import { Logo } from "@/features/shared/ui/Logo";
-// // import { SearchInput } from '@/features/shared/ui/SearchInput';
-
-// // import { BorderedLabel } from '@/features/shared/ui/BorderedLabel';
-// // import { SearchIcon } from '@/features/shared/ui/Icons';
-// // import { RulerIcon, WeightIcon } from '@/features/shared/ui/Icons';
-// // import { SizeLabel } from '@/features/shared/ui/SizeLabel';
-
-// export default function Home() {
-//   return (
-//     <div className='flex justify-center items-center flex-col gap-4 h-screen text-green bg-gray-500'>
-//       {/* <SearchIcon />
-//       <CloseIcon />
-//       <ChevronUpIcon />
-//       <ArrowLeftIcon />
-//       <RoundedCloseIcon />
-//       <WeightIcon />
-//       <RulerIcon /> */}
-
-//       {/* <Logo /> */}
-
-//       {/* <BorderedLabel label='Overgrow' />
-//       <SizeLabel icon={<WeightIcon />} label='Weight' />
-//       <SizeLabel icon={<RulerIcon />} label='Height' /> */}
-
-//       {/* <Button>Load More</Button>
-//       <Button variant='secondary'>
-//         <ArrowLeftIcon />
-//         Back
-//       </Button> */}
-
-//       {/* <Heading variant={'lg'} as={'h1'}>H1</Heading>
-//       <Heading variant="md" as={'h2'}>H2</Heading>
-//       <Heading as={'h3'}>H1</Heading> */}
-
-//       {/* <ID>1</ID>
-//       <Hr/>
-//       <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt harum doloribus, eos officia asperiores possimus omnis natus consequuntur quod dolorum earum et in quis necessitatibus consectetur adipisci dicta laborum dolores.</Description> */}
-
-//       {/* <SizeValue value={6.9} unit="Kg"/>
-//       <SizeValue value={0.7} unit="m"/> */}
-//       {/* <div className='flex flex-col gap-4'>
-//         <Stat label='HP' value={50} />
-//         <Stat label='Defense' value={32} />
-//         <Stat label='Speed' value={80} />
-//       </div> */}
-
-//       {/* <SearchInput /> */}
-
-//       <Footer />
-//     </div>
-//   );
-// }
-
-
+      {/* Footer Section */}
+      <Footer />
+    </div>
+  );
+}

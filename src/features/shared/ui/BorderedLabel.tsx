@@ -11,7 +11,7 @@ export const BorderedLabel: FC<BorderedLabelProps> = ({ label, className }) => {
   return (
     <div
       className={clsx(
-        'border border-neutral-300 rounded-lg p-2 md:p-3 font-medium text-sm md:text-base text-neutral-900',
+        'border border-neutral-300 rounded-lg px-2 py-0.5 font-medium text-sm text-neutral-900',
         className
       )}
     >

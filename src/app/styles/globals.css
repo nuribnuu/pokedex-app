@@ -2,8 +2,8 @@
 
 @theme {
   /* font family */
-  --font-poppins: 'Poppins', sans-serif;
-  
+  /* --font-poppins: 'Poppins', sans-serif; */
+
   /* colors */
   --color-neutral-25: #fdfdfd;
   --color-neutral-50: #fafafa;
@@ -30,4 +30,16 @@
   --color-green: #6aca73;
   --color-white: #ffffff;
   --color-black: #000000;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins.woff2') format('woff2');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
 }

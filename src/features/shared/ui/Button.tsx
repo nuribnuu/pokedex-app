@@ -9,7 +9,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 const baseStyles =
   'flex justify-center items-center gap-1 md:gap-2 bg-white text-sm md:text-base text-neutral-900';
 
-const variantClasses: Record<NonNullable<ButtonProps['variant']>, string> = {
+const variantStyles: Record<NonNullable<ButtonProps['variant']>, string> = {
   primary:
     'w-[180px] h-[44px] md:w-[237px] md:h-[52px] border border-neutral-300 rounded-full font-bold hover:bg-neutral-300',
   secondary: 'font-medium hover:underline',
@@ -24,7 +24,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       {...props}
-      className={clsx(baseStyles, variantClasses[variant], className)}
+      className={clsx(baseStyles, variantStyles[variant], className)}
     >
       {children}
     </button>

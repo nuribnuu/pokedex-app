@@ -1,4 +1,4 @@
-// src/features/shared/ui/Hr.tsx
+// src/features/pokemon/detail/ui/Hr.tsx
 import { FC } from 'react';
 import clsx from 'clsx';
 
@@ -10,7 +10,7 @@ export const Hr: FC<HrProps> = ({ className }) => {
   return (
     <hr
       className={clsx(
-        'border-t-1 border-neutral-300 my-4 md:my-5',
+        'border-t border-neutral-300',
         'w-full',
         className
       )}

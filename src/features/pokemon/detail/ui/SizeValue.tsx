@@ -1,4 +1,4 @@
-// src/features/shared/ui/SizeValue.tsx
+// src/features/pokemon/detail/ui/SizeValue.tsx
 import { FC } from 'react';
 import clsx from 'clsx';
 
