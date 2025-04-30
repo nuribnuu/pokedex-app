@@ -1,4 +1,4 @@
-// src/features/pokemon/detail/widgets/PokemonAttributes.tsx
+// src/features/detail/widgets/PokemonAttributes.tsx
 import { FC } from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import { BorderedLabel } from '@/features/shared/ui/BorderedLabel';

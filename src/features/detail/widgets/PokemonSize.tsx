@@ -1,4 +1,4 @@
-// src/features/pokemon/detail/widgets/PokemonSize.tsx
+// src/features/detail/widgets/PokemonSize.tsx
 import { FC } from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import { PokemonSizeItem } from './PokemonSizeItem';

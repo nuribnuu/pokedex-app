@@ -1,7 +1,7 @@
-// src/features/pokemon/detail/widgets/PokemonCard.tsx
+// src/features/detail/widgets/PokemonCard.tsx
 import React from 'react';
 import Image from 'next/image';
-import { ID } from '@/features/pokemon/detail/ui/ID';
+import { ID } from '@/features/detail/ui/ID';
 import { Title } from '../ui/Title';
 import { BorderedLabel } from '../ui/BorderedLabel';
 

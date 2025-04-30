@@ -1,4 +1,4 @@
-// src/features/pokemon/detail/widgets/PokemonEvolutionSection.tsx
+// src/features/detail/widgets/PokemonEvolutionSection.tsx
 import React from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import { PokemonCard } from '@/features/shared/widgets/PokemonCard';

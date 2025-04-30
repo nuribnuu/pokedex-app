@@ -29,10 +29,10 @@ export const Header: FC = () => {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 w-full transition-colors',
+        'fixed top-0 z-999 w-full transition-colors',
         showSearch
           ? 'bg-white shadow-[0px_4px_24px_0px_#B4B2B240]'
-          : 'bg-[#FFCB05]'
+          : 'bg-primary-300'
       )}
     >
       <div

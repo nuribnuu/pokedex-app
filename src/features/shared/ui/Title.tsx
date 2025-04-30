@@ -12,7 +12,7 @@ type TitleProps = {
 const baseStyles = 'text-neutral-900';
 
 const variantStyles: Record<NonNullable<TitleProps['variant']>, string> = {
-  lg: 'text-2xl md:text-4xl font-bold',
+  lg: 'text-4xl md:text-6xl font-bold',
   md: 'text-xl md:text-2xl font-semibold',
   sm: 'text-lg md:text-xl font-semibold',
 };

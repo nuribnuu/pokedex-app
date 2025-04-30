@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './styles/globals.css';
+import { Header } from '@/features/shared/layout/Header';
+import { Footer } from '@/features/shared/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'Pokedex App',
@@ -13,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className='font-poppins'>{children}</body>
+      <body className='font-poppins'>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

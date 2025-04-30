@@ -1,4 +1,4 @@
-// src/features/pokemon/detail/widgets/PokemonType.tsx
+// src/features/detail/widgets/PokemonType.tsx
 import { FC } from 'react';
 import { PokemonAttributes } from './PokemonAttributes';
 

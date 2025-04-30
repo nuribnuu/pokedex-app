@@ -1,9 +1,9 @@
-// src/features/pokemon/detail/widgets/PokemonIdentitiy.tsx
+// src/features/detail/widgets/PokemonIdentitiy.tsx
 import { FC } from 'react';
 import Image from 'next/image';
 import { ID } from '../ui/ID';
 import { Title } from '@/features/shared/ui/Title';
-import { Description } from '../../../shared/ui/Description';
+import { Description } from '@/features/shared/ui/Description';
 
 type PokemonIdentitiyProps = {
   identity: {
@@ -19,7 +19,7 @@ export const PokemonIdentitiy: FC<PokemonIdentitiyProps> = ({
   return (
     <div className='flex flex-col gap-2.5 md:gap-4'>
       <Image
-        src={'/images/pokeball.svg'}
+        src='/images/shared/pokeball.svg'
         width={40}
         height={40}
         alt='Pokeball'
@@ -27,7 +27,7 @@ export const PokemonIdentitiy: FC<PokemonIdentitiyProps> = ({
       />
       <div>
         <ID>{id}</ID>
-        <Title variant='lg' as={'h1'}>
+        <Title variant='lg' as='h1'>
           {name}
         </Title>
         <Description>{description}</Description>

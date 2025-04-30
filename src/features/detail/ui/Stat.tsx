@@ -1,4 +1,4 @@
-// src/features/pokemon/detail/ui/Stat.tsx
+// src/features/detail/ui/Stat.tsx
 import { FC } from 'react';
 import clsx from 'clsx';
 

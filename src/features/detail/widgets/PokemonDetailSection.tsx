@@ -1,4 +1,4 @@
-// src/features/pokemon/detail/widgets/PokemonDetailSection.tsx
+// src/features/detail/widgets/PokemonDetailSection.tsx
 import React from 'react';
 import { PokemonIdentitiy } from './PokemonIdentitiy';
 import { PokemonType } from './PokemonType';

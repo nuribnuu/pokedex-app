@@ -11,12 +11,12 @@ type LogoProps = {
 export const Logo: FC<LogoProps> = ({ hideText = false }) => {
   return (
     <Link
-      href={'/'}
+      href='/'
       className='flex items-center gap-1 md:gap-2'
       aria-label='Go to Home page'
     >
       <Image
-        src='/images/logo.svg'
+        src='/images/shared/logo.svg'
         alt='Logo'
         className='w-7 h-7 md:w-10 md:h-10'
         width={40}

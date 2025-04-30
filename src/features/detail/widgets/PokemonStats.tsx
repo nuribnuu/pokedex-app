@@ -1,4 +1,4 @@
-// src/features/pokemon/detail/widgets/PokemonStats.tsx
+// src/features/detail/widgets/PokemonStats.tsx
 
 import { FC } from 'react';
 import { Title } from '@/features/shared/ui/Title';
