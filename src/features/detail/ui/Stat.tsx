@@ -1,4 +1,5 @@
 // src/features/detail/ui/Stat.tsx
+
 import { FC } from 'react';
 import clsx from 'clsx';
 

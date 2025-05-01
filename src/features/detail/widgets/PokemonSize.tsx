@@ -1,4 +1,5 @@
 // src/features/detail/widgets/PokemonSize.tsx
+
 import { FC } from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import { PokemonSizeItem } from './PokemonSizeItem';
@@ -25,7 +26,12 @@ export const PokemonSize: FC<PokemonSizeProps> = ({
           unit='kg'
         />
         <div className='border-l border-neutral-300' />
-        <PokemonSizeItem icon={<RulerIcon />} label='Height' value={height} unit='m' />
+        <PokemonSizeItem
+          icon={<RulerIcon />}
+          label='Height'
+          value={height}
+          unit='m'
+        />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 // src/features/shared/layout/Header.tsx
+
 'use client';
 
 import { usePathname } from 'next/navigation';

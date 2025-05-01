@@ -1,4 +1,5 @@
 // src/features/detail/widgets/PokemonArtwork.tsx
+
 import { FC } from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import Image from 'next/image';

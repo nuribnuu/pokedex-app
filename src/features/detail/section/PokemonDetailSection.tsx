@@ -1,5 +1,8 @@
 // src/features/detail/widgets/PokemonDetailSection.tsx
+
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { PokemonIdentitiy } from '../widgets/PokemonIdentitiy';
 import { PokemonType } from '../widgets/PokemonType';
 import { PokemonAbilities } from '../widgets/PokemonAbilities';
@@ -9,8 +12,6 @@ import { PokemonStats } from '../widgets/PokemonStats';
 import { Hr } from '../ui/Hr';
 import { Button } from '@/features/shared/ui/Button';
 import { ArrowLeftIcon } from '@/features/shared/ui/Icons';
-import Image from 'next/image';
-import Link from 'next/link';
 
 type PokemonDetailSectionProps = {
   identity: {
@@ -56,10 +57,10 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
         <div className='lg:w-2/5 xl:w-1/2 flex items-center'>
           <Image
             className='object-cover mx-auto size-80 xl:size-100 2xl:size-120'
-            src={'/images/detail/bulbasaur-lg.svg'}
+            src='/images/detail/bulbasaur-lg.svg'
             width={80}
             height={80}
-            alt='Pokemon Artwork'
+            alt='Pokemon Image'
           />
         </div>
         <div className='flex flex-col gap-4 md:gap-6 lg:w-3/5 xl:w-1/2'>

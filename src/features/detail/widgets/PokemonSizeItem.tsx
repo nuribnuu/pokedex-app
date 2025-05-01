@@ -1,4 +1,5 @@
 // src/features/shared/widgets/PokemonSizeItem.tsx
+
 import { FC, ReactNode } from 'react';
 import { SizeLabel } from '../ui/SizeLabel';
 import { SizeValue } from '../ui/SizeValue';

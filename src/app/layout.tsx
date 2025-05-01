@@ -1,3 +1,5 @@
+// src/app/layout.tsx
+
 import type { Metadata } from 'next';
 import './styles/globals.css';
 import { Header } from '@/features/shared/layout/Header';

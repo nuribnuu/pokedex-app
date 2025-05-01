@@ -1,4 +1,5 @@
 // src/features/detail/widgets/PokemonCard.tsx
+
 import React from 'react';
 import Image from 'next/image';
 import { ID } from '@/features/detail/ui/ID';

@@ -1,4 +1,5 @@
 // src/features/detail/widgets/PokemonAbilities.tsx
+
 import { FC } from 'react';
 import { PokemonAttributes } from './PokemonAttributes';
 

@@ -1,3 +1,5 @@
+// src/app/page.tsx
+
 import { HeroSection } from '@/features/home/section/HeroSection';
 import { ListPokemonSection } from '@/features/home/section/ListPokemonSection';
 

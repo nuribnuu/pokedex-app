@@ -1,11 +1,12 @@
-// src/features/detail/pages/DetailPage.tsx
+// src/app/detail/page.tsx
+
 import React from 'react';
 import { PokemonDetailSection } from '@/features/detail/section/PokemonDetailSection';
 import { PokemonEvolutionSection } from '@/features/detail/section/PokemonEvolutionSection';
 
 export default function DetailPage() {
   return (
-    <main className='pt-[80px] md:pt-[100px] container mx-auto px-6 py-10'>
+    <main className='min-h-screen pt-[80px] md:pt-[100px] container mx-auto px-6 py-10'>
       <PokemonDetailSection
         identity={{
           id: '001',

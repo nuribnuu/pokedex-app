@@ -1,4 +1,5 @@
 // src/features/shared/layout/Footer.tsx
+
 import React from 'react';
 import { Logo } from '../ui/Logo';
 

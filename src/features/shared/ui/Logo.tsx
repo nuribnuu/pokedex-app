@@ -1,4 +1,5 @@
 // src/features/shared/ui/Logo.tsx
+
 import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';

@@ -1,4 +1,5 @@
 // src/features/detail/ui/Description.tsx
+
 import { FC, ReactNode } from 'react';
 import clsx from 'clsx';
 

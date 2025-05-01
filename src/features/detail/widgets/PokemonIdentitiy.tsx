@@ -1,4 +1,5 @@
 // src/features/detail/widgets/PokemonIdentitiy.tsx
+
 import { FC } from 'react';
 import Image from 'next/image';
 import { ID } from '../ui/ID';

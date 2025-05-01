@@ -1,4 +1,5 @@
 // src/features/home/section/HeroSection.tsx
+
 import React from 'react';
 import Image from 'next/image';
 import { Description } from '../../shared/ui/Description';
