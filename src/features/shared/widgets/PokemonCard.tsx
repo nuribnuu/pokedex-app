@@ -36,8 +36,8 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
 
         {abilities && abilities.length > 0 && (
           <div className='flex center gap-2 flex-wrap'>
-            {abilities.slice(0, 2).map((ability) => (
-              <BorderedLabel key={id} label={ability} />
+            {abilities.slice(0, 2).map((ability, index) => (
+              <BorderedLabel key={`${ability}-${index}`} label={ability} />
             ))}
           </div>
         )}

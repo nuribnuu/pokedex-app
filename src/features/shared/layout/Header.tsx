@@ -10,22 +10,24 @@ import clsx from 'clsx';
 
 export const Header: FC = () => {
   const pathname = usePathname();
-  const [showSearch, setShowSearch] = useState(false);
+  const [showSearch, setShowSearch] = useState(false); // Default false
 
   useEffect(() => {
     if (pathname === '/') {
-      setShowSearch(false);
-
       const handleScroll = () => {
         const heroHeight = 400;
+        // Update showSearch hanya ketika scroll lebih tinggi dari heroHeight
         setShowSearch(window.scrollY > heroHeight);
       };
 
       window.addEventListener('scroll', handleScroll);
 
+      // Memastikan bahwa showSearch sudah ter-set dengan nilai yang benar ketika pertama kali dimuat
+      handleScroll(); // Initial call on load to check scroll position
+
       return () => window.removeEventListener('scroll', handleScroll);
     } else {
-      setShowSearch(true);
+      setShowSearch(true); // Menetapkan true jika bukan di halaman home
     }
   }, [pathname]);
 
@@ -34,8 +36,8 @@ export const Header: FC = () => {
       className={clsx(
         'fixed top-0 z-999 w-full transition-colors',
         showSearch
-          ? 'bg-white shadow-[0px_4px_24px_0px_#B4B2B240]'
-          : 'bg-primary-300'
+          ? 'bg-white shadow-[0px_4px_24px_0px_#B4B2B240]' // Background putih ketika showSearch true
+          : 'bg-primary-300' // Background primary ketika showSearch false
       )}
     >
       <div
@@ -54,4 +56,3 @@ export const Header: FC = () => {
     </header>
   );
 };
-
