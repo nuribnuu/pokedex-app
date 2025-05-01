@@ -2,15 +2,18 @@
 
 import { FC, useState } from 'react';
 import { RoundedCloseIcon, SearchIcon } from '../ui/Icons';
+import clsx from 'clsx';
 
 type SearchInputProps = {
   placeholder?: string;
   onChange?: (value: string) => void;
+  className?: string;
 };
 
 export const SearchInput: FC<SearchInputProps> = ({
   placeholder = 'Search Pokemon',
   onChange,
+  className,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -25,14 +28,14 @@ export const SearchInput: FC<SearchInputProps> = ({
   };
 
   return (
-    <div className='relative w-full max-w-[518px]'>
+    <div className={clsx('relative w-full max-w-[518px]', className)}>
       {/* Input */}
       <input
         type='text'
         value={searchTerm}
         onChange={handleChange}
         placeholder={placeholder}
-        className='w-full rounded-full px-4 md:px-6 py-3 md:py-4 bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent text-neutral-900 text-sm md:text-base placeholder:!text-sm md:placeholder:!text-base'
+        className='w-full rounded-full px-4 md:px-6 py-3 md:py-4 bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent text-neutral-900 text-xl '
       />
 
       {/* Icon Search */}

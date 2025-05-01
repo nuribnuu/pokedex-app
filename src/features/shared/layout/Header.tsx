@@ -37,7 +37,7 @@ export const Header: FC = () => {
     >
       <div
         className={clsx(
-          'container mx-auto px-4 py-3 flex items-center gap-2 justify-center',
+          'container mx-auto px-4 py-3 md:py-5 flex items-center gap-2 justify-center',
           showSearch && 'md:justify-between'
         )}
       >

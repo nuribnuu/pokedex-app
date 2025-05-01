@@ -19,7 +19,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
   abilities,
 }) => {
   return (
-    <div className='w-full md:max-w-sm rounded-3xl border border-neutral-300 p-3 md:p-6 bg-neutral-25 flex flex-col md:gap-6'>
+    <div className='w-full md:max-w-sm rounded-3xl border border-neutral-300 p-4 md:p-6 bg-neutral-25 flex flex-col md:gap-6'>
       <Image
         src={imageUrl}
         alt={name}
@@ -27,7 +27,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
         height={200}
         className='w-40 h-40 md:w-50 md:h-50 mx-auto object-contain'
       />
-      <div className='flex flex-col items-center text-center gap-4'>
+      <div className='flex flex-col gap-4'>
         <div>
           <ID>{id}</ID>
           <Title variant='sm'>{name}</Title>
