@@ -1,9 +1,9 @@
-// src/features/home/HeroSection.tsx
+// src/features/home/section/HeroSection.tsx
 import React from 'react';
 import Image from 'next/image';
-import { Description } from '../shared/ui/Description';
-import { SearchInput } from '../shared/widgets/SearchInput';
-import { Title } from '../shared/ui/Title';
+import { Description } from '../../shared/ui/Description';
+import { SearchInput } from '../../shared/widgets/SearchInput';
+import { Title } from '../../shared/ui/Title';
 
 export const HeroSection: React.FC = () => {
   return (

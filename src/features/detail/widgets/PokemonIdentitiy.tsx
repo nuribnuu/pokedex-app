@@ -17,7 +17,7 @@ export const PokemonIdentitiy: FC<PokemonIdentitiyProps> = ({
   identity: { id, name, description },
 }) => {
   return (
-    <div className='flex flex-col gap-2.5 md:gap-4'>
+    <div className='flex flex-col gap-4'>
       <Image
         src='/images/shared/pokeball.svg'
         width={40}

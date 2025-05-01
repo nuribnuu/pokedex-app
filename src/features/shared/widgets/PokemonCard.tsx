@@ -27,7 +27,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
         height={200}
         className='w-40 h-40 md:w-50 md:h-50 mx-auto object-contain'
       />
-      <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-2'>
         <div>
           <ID>{id}</ID>
           <Title variant='sm'>{name}</Title>

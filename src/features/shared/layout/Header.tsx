@@ -12,18 +12,20 @@ export const Header: FC = () => {
   const [showSearch, setShowSearch] = useState(false);
 
   useEffect(() => {
-    if (pathname !== '/') {
+    if (pathname === '/') {
+      setShowSearch(false);
+
+      const handleScroll = () => {
+        const heroHeight = 400;
+        setShowSearch(window.scrollY > heroHeight);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => window.removeEventListener('scroll', handleScroll);
+    } else {
       setShowSearch(true);
-      return;
     }
-
-    const handleScroll = () => {
-      const heroHeight = 400;
-      setShowSearch(window.scrollY > heroHeight);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, [pathname]);
 
   return (
@@ -51,3 +53,4 @@ export const Header: FC = () => {
     </header>
   );
 };
+
