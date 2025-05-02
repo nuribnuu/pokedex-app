@@ -1,6 +1,6 @@
 // src/features/detail/api/getPokemonDetail.ts
 
-import { Ability } from '@/features/home/api/types';
+import { Ability } from '@/features/shared/api/types';
 import { Type, Stat, EvolutionChain } from './types';
 
 const capitalize = (str: string): string =>

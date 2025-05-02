@@ -3,9 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Title } from '@/features/shared/ui/Title';
-import { Description } from '@/features/shared/ui/Description';
 import { SearchInput } from '@/features/shared/widgets/SearchInput';
-
 
 export const HeroSection: React.FC = () => {
   return (
@@ -25,10 +23,11 @@ export const HeroSection: React.FC = () => {
         >
           Discover the Most Powerful Pokémon in the Wild!
         </Title>
-        <Description variant='bold' className='!text-[2vh] md:!text-[3vh]'>
-          Train, Battle, and Collect Your Favorites!
-        </Description>
-        <SearchInput className='!text-[2vh] md:!text-[2.5vh] placeholder:!text-[2vh] md:placeholder:!text-[3vh]' />
+
+        <SearchInput
+          className='!text-[2vh] md:!text-[2.5vh] placeholder:!text-[2vh] md:placeholder:!text-[3vh]'
+          isHeroSection={true}
+        />
       </div>
 
       <Image

@@ -117,15 +117,15 @@ export const RoundedCloseIcon: FC<IconProps> = ({ className = '' }) => {
           d='M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z'
           fill='white'
           stroke='white'
-          stroke-width='2'
-          stroke-linejoin='round'
+          strokeWidth='2'
+          strokeLinejoin='round'
         />
         <path
           d='M14.8285 9.17139L9.17151 14.8284M9.17151 9.17139L14.8285 14.8284'
           stroke='black'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeWidth='2'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         />
       </mask>
       <g mask='url(#mask0_22419_3266)'>

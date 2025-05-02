@@ -1,27 +1,71 @@
 // src/app/search/page.tsx
 
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { SearchEmptyStateSection } from '@/features/search/section/SearchEmptyStateSection';
 import { SearchResultsSection } from '@/features/search/section/SearchResultsSection';
-
-const query = '';
-const mockResults = [];
+import { getPokemons } from '@/features/shared/api/getPokemons';
+import { Pokemon } from '@/features/shared/api/types';
+import Image from 'next/image';
+import { Title } from '@/features/shared/ui/Title';
 
 export default function SearchPage() {
-  const hasQuery = query.trim().length > 0;
-  const hasResults = mockResults.length > 0;
+  const searchParams = useSearchParams();
+  const query = searchParams.get('q')?.trim().toLowerCase() || '';
+  const hasQuery = query.length > 0;
+
+  const [results, setResults] = useState<Pokemon[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!hasQuery) return;
+
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const allPokemons = await getPokemons(500);
+        const filtered = allPokemons.filter((pokemon) =>
+          pokemon.name.toLowerCase().includes(query)
+        );
+        setResults(filtered);
+      } catch (error) {
+        console.error('Error fetching Pokémons:', error);
+        setResults([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [hasQuery, query]);
 
   let content;
 
   if (!hasQuery) {
-    content = <SearchEmptyStateSection type="no-query" />;
-  } else if (!hasResults) {
-    content = <SearchEmptyStateSection type="no-results" query={query} />;
+    content = <SearchEmptyStateSection type='no-query' />;
+  } else if (loading) {
+    content = (
+      <div className='min-h-screen flex flex-col justify-center items-center gap-6 -mt-30'>
+        <Image
+          src='/images/shared/pokeball.svg'
+          alt='Pokeball'
+          width={130}
+          height={130}
+          className='mx-auto size-23 md:size-32 object-cover animate-spin'
+        />
+        <Title className='animate-pulse'>Loading...</Title>
+      </div>
+    );
+  } else if (results.length === 0) {
+    content = <SearchEmptyStateSection type='no-results' query={query} />;
   } else {
-    content = <SearchResultsSection results={mockResults} query={query} />;
+    content = <SearchResultsSection results={results} query={query} />;
   }
 
   return (
-    <main className="container mx-auto min-h-screen px-6 py-10 pt-[80px] md:pt-[100px]">
+    <main className='container mx-auto min-h-screen px-6 py-10 pt-[80px] md:pt-[100px]'>
       {content}
     </main>
   );

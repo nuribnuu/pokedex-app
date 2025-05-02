@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { Title } from '@/features/shared/ui/Title';
 import { PokemonCard } from '@/features/shared/widgets/PokemonCard';
 import { Button } from '@/features/shared/ui/Button';
-import { getPokemons } from '../api/getPokemons';
 import { usePokemonStore } from '@/features/shared/store/pokemonStore';
+import { getPokemons } from '@/features/shared/api/getPokemons';
 
 type PokemonListSectionProps = {
   pokemons: {
@@ -45,8 +45,10 @@ export const PokemonListSection: React.FC<PokemonListSectionProps> = ({
         {pokemonList.map((pokemon) => (
           <Link
             href={`/detail/${pokemon.id}`}
+            onClick={() => {
+              setSelectedImageUrl(pokemon.imageUrl);
+            }}
             key={pokemon.id}
-            onClick={() => setSelectedImageUrl(pokemon.imageUrl)}
           >
             <PokemonCard
               id={pokemon.id}

@@ -2,6 +2,7 @@
 
 import { Description } from '@/features/shared/ui/Description';
 import { Title } from '@/features/shared/ui/Title';
+import { BackButton } from '@/features/shared/widgets/BackButton';
 import Image from 'next/image';
 
 type SearchEmptyStateSectionProps = {
@@ -50,6 +51,10 @@ export const SearchEmptyStateSection = ({
 
         <div className='flex flex-col items-center gap-1'>
           {renderContent()}
+        </div>
+
+        <div>
+          <BackButton />
         </div>
       </div>
     </section>
