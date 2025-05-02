@@ -8,7 +8,7 @@ type IDProps = {
   className?: string;
 };
 
-const baseStyles = 'font-normal text-base md:text-lg text-neutral-500';
+const baseStyles = 'font-normal text-xl md:text-2xl text-neutral-500';
 
 export const ID: FC<IDProps> = ({ children, className }) => {
   return (

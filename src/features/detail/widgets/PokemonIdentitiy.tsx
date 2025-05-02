@@ -19,15 +19,17 @@ export const PokemonIdentitiy: FC<PokemonIdentitiyProps> = ({
 }) => {
   return (
     <div className='flex flex-col gap-4'>
-      <Image
-        src='/images/shared/pokeball.svg'
-        width={40}
-        height={40}
-        alt='Pokeball'
-        className='w-8 h-8 md:w-10 md:h-10'
-      />
-      <div>
+      <div className='flex items-center gap-2 md:gap-4'>
+        <Image
+          src='/images/shared/pokeball.svg'
+          width={40}
+          height={40}
+          alt='Pokeball'
+          className='w-8 h-8 md:w-10 md:h-10'
+        />
         <ID>{id}</ID>
+      </div>
+      <div className='space-y-2 md:space-y-4'>
         <Title variant='lg' as='h1'>
           {name}
         </Title>

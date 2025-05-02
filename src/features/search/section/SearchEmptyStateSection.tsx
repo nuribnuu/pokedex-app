@@ -1,8 +1,8 @@
 // src/features/search/section/SearchEmptyStateSection.tsx
 
+import { Description } from '@/features/shared/ui/Description';
+import { Title } from '@/features/shared/ui/Title';
 import Image from 'next/image';
-import { Title } from '../../shared/ui/Title';
-import { Description } from '../../shared/ui/Description';
 
 type SearchEmptyStateSectionProps = {
   query?: string;

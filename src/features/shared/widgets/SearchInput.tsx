@@ -1,3 +1,5 @@
+// src/feature/shared/widgets.tsx
+
 'use client';
 
 import { FC, useState } from 'react';

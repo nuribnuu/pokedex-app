@@ -7,7 +7,8 @@ import Link from 'next/link';
 import { Title } from '@/features/shared/ui/Title';
 import { PokemonCard } from '@/features/shared/widgets/PokemonCard';
 import { Button } from '@/features/shared/ui/Button';
-import { getPokemons } from '../api/getPokemons'; // Import getPokemons
+import { getPokemons } from '../api/getPokemons';
+import { usePokemonStore } from '@/features/shared/store/pokemonStore';
 
 type PokemonListSectionProps = {
   pokemons: {
@@ -21,15 +22,18 @@ type PokemonListSectionProps = {
 export const PokemonListSection: React.FC<PokemonListSectionProps> = ({
   pokemons,
 }) => {
-  const [pokemonsList, setPokemonsList] = useState(pokemons); // State untuk pokemons yang sudah dimuat
-  const [loading, setLoading] = useState(false); // State untuk loading
+  const [pokemonList, setPokemonList] = useState(pokemons);
+  const [loading, setLoading] = useState(false);
+  const setSelectedImageUrl = usePokemonStore(
+    (state) => state.setSelectedImageUrl
+  );
 
   const loadMorePokemons = async () => {
-    setLoading(true); // Menandakan sedang memuat
-    const currentLength = pokemonsList.length;
-    const morePokemons = await getPokemons(50, currentLength); // Fetch lebih banyak pokemons
-    setPokemonsList((prevPokemons) => [...prevPokemons, ...morePokemons]); // Menambahkan pokemons baru ke state
-    setLoading(false); // Mematikan loading
+    setLoading(true);
+    const currentLength = pokemonList.length;
+    const morePokemons = await getPokemons(50, currentLength);
+    setPokemonList((prevPokemons) => [...prevPokemons, ...morePokemons]);
+    setLoading(false);
   };
 
   return (
@@ -38,8 +42,12 @@ export const PokemonListSection: React.FC<PokemonListSectionProps> = ({
         Pokemon List
       </Title>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6'>
-        {pokemonsList.map((pokemon) => (
-          <Link href='/detail' key={pokemon.id}>
+        {pokemonList.map((pokemon) => (
+          <Link
+            href={`/detail/${pokemon.id}`}
+            key={pokemon.id}
+            onClick={() => setSelectedImageUrl(pokemon.imageUrl)}
+          >
             <PokemonCard
               id={pokemon.id}
               name={pokemon.name}
@@ -49,11 +57,7 @@ export const PokemonListSection: React.FC<PokemonListSectionProps> = ({
           </Link>
         ))}
       </div>
-      <Button
-        className='mx-auto'
-        onClick={loadMorePokemons}
-        disabled={loading} // Tombol tidak dapat ditekan saat loading
-      >
+      <Button className='mx-auto' onClick={loadMorePokemons} disabled={loading}>
         {loading ? 'Loading...' : 'Load More'}
       </Button>
     </section>

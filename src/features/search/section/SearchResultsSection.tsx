@@ -1,7 +1,7 @@
 // src/features/search/section/SearchResultsSection.tsx
 
-import { Title } from '../../shared/ui/Title';
-import { PokemonCard } from '../../shared/widgets/PokemonCard';
+import { Title } from '@/features/shared/ui/Title';
+import { PokemonCard } from '@/features/shared/widgets/PokemonCard';
 
 type Pokemon = {
   id: string;

@@ -1,4 +1,6 @@
-// src/features/detail/widgets/PokemonDetailSection.tsx
+// src/features/detail/section/PokemonDetailSection.tsx
+
+'use client';
 
 import React from 'react';
 import Image from 'next/image';
@@ -12,6 +14,7 @@ import { PokemonStats } from '../widgets/PokemonStats';
 import { Hr } from '../ui/Hr';
 import { Button } from '@/features/shared/ui/Button';
 import { ArrowLeftIcon } from '@/features/shared/ui/Icons';
+import { usePokemonStore } from '@/features/shared/store/pokemonStore';
 
 type PokemonDetailSectionProps = {
   identity: {
@@ -43,6 +46,8 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
   artwork,
   stats,
 }) => {
+  const imageUrl = usePokemonStore((state) => state.selectedImageUrl);
+
   return (
     <section className='flex flex-col gap-2 md:gap-5 w-full'>
       <div>
@@ -57,7 +62,7 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
         <div className='lg:w-2/5 xl:w-1/2 flex items-center'>
           <Image
             className='object-cover mx-auto size-80 xl:size-100 2xl:size-120'
-            src='/images/detail/bulbasaur-lg.svg'
+            src={imageUrl}
             width={80}
             height={80}
             alt='Pokemon Image'

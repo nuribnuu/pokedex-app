@@ -13,7 +13,7 @@ export const SizeLabel: FC<SizeLabelProps> = ({ icon, label, className }) => {
   return (
     <div
       className={clsx(
-        'flex items-center gap-1 md:gap-2 font-normal text-sm md:text-base',
+        'flex items-center gap-1 font-normal text-sm md:text-base',
         className
       )}
     >
