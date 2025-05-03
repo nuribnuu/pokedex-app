@@ -21,13 +21,14 @@ export const HeroSection: React.FC = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          className='w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72'
         >
           <Image
             src='/images/home/pokemon-text.svg'
             alt='pokemon text'
             width={175}
             height={64}
-            className='w-[103px] h-[38px] md:w-[175px] md:h-[64px]'
+            layout='responsive'
           />
         </motion.div>
 
@@ -39,9 +40,9 @@ export const HeroSection: React.FC = () => {
           <Title
             variant='lg'
             as='h1'
-            className='max-w-sm md:max-w-2xl lg:max-w-4xl !text-[4.5vh] md:!text-[6vh]'
+            className='max-w-[300px] md:max-w-2xl lg:max-w-5xl font-bold text-2xl md:text-2xl lg:text-4xl'
           >
-            Discover the Most Powerful Pokémon in the Wild!
+            Find Pokémon Details
           </Title>
         </motion.div>
 
@@ -51,7 +52,7 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <SearchInput
-            className='!text-[2vh] md:!text-[2.5vh] placeholder:!text-[2vh] md:placeholder:!text-[3vh]'
+            className='text-sm md:text-base placeholder:text-sm md:placeholder:text-base'
             isHeroSection={true}
           />
         </motion.div>
@@ -73,7 +74,7 @@ export const HeroSection: React.FC = () => {
       </motion.div>
 
       <motion.div
-        className='absolute bottom-0 left-1/5 transform -translate-x-1/2'
+        className='absolute bottom-0 sm:bottom-6 lg:bottom-10 xl:bottom-13 2xl:bottom-17 left-1/5 z-20 transform -translate-x-1/2'
         initial={{ y: 100, opacity: 0, rotate: -10 }}
         animate={{ y: 0, opacity: 1, rotate: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}
@@ -83,12 +84,12 @@ export const HeroSection: React.FC = () => {
           alt='charizard'
           width={160}
           height={160}
-          className='size-[18vh] sm:size-[20vh] md:size-[24vh] lg:size-[30vh] xl:size-[36vh] 2xl:size-[40vh]'
+          className='w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64'
         />
       </motion.div>
 
       <motion.div
-        className='absolute bottom-0 right-1/5 transform translate-x-1/2'
+        className='absolute bottom-0 sm:bottom-6 lg:bottom-10 xl:bottom-13 2xl:bottom-17 right-1/5 z-20 transform translate-x-1/2'
         initial={{ y: 100, opacity: 0, rotate: 10 }}
         animate={{ y: 0, opacity: 1, rotate: 0 }}
         transition={{ duration: 0.6, delay: 1 }}
@@ -98,7 +99,7 @@ export const HeroSection: React.FC = () => {
           alt='pikachu'
           width={160}
           height={160}
-          className='size-[18vh] sm:size-[20vh] md:size-[24vh] lg:size-[30vh] xl:size-[36vh] 2xl:size-[40vh]'
+          className='w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64'
         />
       </motion.div>
     </section>

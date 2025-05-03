@@ -38,7 +38,7 @@ export const SearchEmptyStateSection = ({
 
   return (
     <section>
-      <div className='flex min-h-screen flex-col items-center justify-center gap-6 -mt-30'>
+      <div className='flex min-h-screen flex-col items-center justify-center gap-6 -mt-25'>
         <div>
           <Image
             src='/images/shared/pokeball.svg'

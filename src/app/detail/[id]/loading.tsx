@@ -5,7 +5,7 @@ import React from 'react';
 
 export default function Loading() {
   return (
-    <main className='min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10 animate-pulse space-y-8 '>
+    <main className='min-h-screen pt-[90px] md:pt-[130px] container mx-auto px-6 py-10 animate-pulse space-y-8 '>
       <ScrollToTop />
       <div className='h-8 w-1/2 bg-gray-300 rounded' />
 

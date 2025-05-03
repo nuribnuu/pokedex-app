@@ -24,7 +24,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
       className='w-full md:max-w-sm rounded-3xl border border-neutral-300 p-4 md:p-6 bg-neutral-25 flex flex-col md:gap-6 
         transition ease-in-out hover:shadow-lg hover:scale-95 duration-200'
     >
-      <div className='relative w-40 h-40 md:w-50 md:h-50 mx-auto'>
+      <div className='relative w-full aspect-[1/1] max-w-[200px] md:max-w-[250px] mx-auto'>
         {isLoading && (
           <div className='absolute inset-0 bg-neutral-200 animate-pulse rounded-xl' />
         )}

@@ -13,9 +13,9 @@ type TitleProps = {
 const baseStyles = 'text-neutral-900';
 
 const variantStyles: Record<NonNullable<TitleProps['variant']>, string> = {
-  lg: 'text-4xl md:text-6xl font-bold',
-  md: 'text-2xl md:text-3xl font-bold',
-  sm: 'text-lg md:text-xl font-semibold',
+  lg: 'text-4xl md:text-5xl lg:text-6xl font-bold',
+  md: 'text-xl md:text-2xl lg:text-3xl font-bold',
+  sm: 'text-base md:text-lg lg:text-xl font-semibold',
 };
 
 export const Title: React.FC<TitleProps> = ({

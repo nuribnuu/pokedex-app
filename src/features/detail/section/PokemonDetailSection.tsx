@@ -12,7 +12,6 @@ import { PokemonSize } from '../widgets/PokemonSize';
 import { PokemonArtwork } from '../widgets/PokemonArtwork';
 import { PokemonStats } from '../widgets/PokemonStats';
 import { Hr } from '../ui/Hr';
-import { Title } from '@/features/shared/ui/Title';
 import { PageHeader } from '@/features/shared/widgets/PageHeader';
 import { motion } from 'framer-motion';
 
@@ -95,7 +94,7 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
               alt='Pokemon Image'
             />
           ) : (
-            <Title>Loading image...</Title>
+            <div className='w-20 h-20 md:w-24 md:h-24 xl:w-32 xl:h-32 bg-gray-300 animate-pulse rounded-full' />
           )}
         </motion.div>
 

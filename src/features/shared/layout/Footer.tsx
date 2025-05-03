@@ -9,7 +9,7 @@ export const Footer = () => {
       <div className='container mx-auto px-4 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4'>
         <Logo />
         <small className='font-normal text-sm md:text-base text-neutral-600 text-center'>
-          © 2025 findpoke. All rights reserved.
+          © 2025 findpoké. All rights reserved.
         </small>
       </div>
     </footer>

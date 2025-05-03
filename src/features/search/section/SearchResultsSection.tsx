@@ -21,8 +21,7 @@ export const SearchResultsSection = ({
   query,
 }: SearchResultsSectionProps) => {
   return (
-    <section className='flex flex-col gap-6'>
-      {/* Animated PageHeader */}
+    <section className='flex flex-col gap-6 '>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +31,6 @@ export const SearchResultsSection = ({
         <PageHeader title={`Results for "${query}"`} />
       </motion.div>
 
-      {/* Animated Grid of Pokemon Cards */}
       <motion.div
         className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6'
         initial={{ opacity: 0 }}
@@ -65,7 +63,6 @@ export const SearchResultsSection = ({
         ))}
       </motion.div>
 
-      {/* Animated ScrollButton */}
       <ScrollButton />
     </section>
   );

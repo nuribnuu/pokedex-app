@@ -23,14 +23,14 @@ export default async function DetailPage({
 
   if (!data) {
     return (
-      <main className='min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10'>
+      <main className='min-h-screen pt-[90px] md:pt-[130px] container mx-auto px-6 py-10'>
         <Title>Error fetching Pokémon details. Please try again later.</Title>
       </main>
     );
   }
 
   return (
-    <main className='min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10'>
+    <main className='min-h-screen pt-[90px] md:pt-[130px] container mx-auto px-6 py-10'>
       <ScrollToTop />
       <PokemonDetailSection
         identity={{

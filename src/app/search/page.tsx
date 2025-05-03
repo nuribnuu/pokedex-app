@@ -57,7 +57,7 @@ export default function SearchPage() {
     content = <SearchEmptyStateSection type='no-query' />;
   } else if (loading) {
     content = (
-      <div className='min-h-screen flex flex-col justify-center items-center gap-6 -mt-30'>
+      <div className='min-h-screen flex flex-col justify-center items-center gap-6  -mt-25'>
         <Image
           src='/images/shared/pokeball.svg'
           alt='Pokeball'
@@ -75,7 +75,7 @@ export default function SearchPage() {
   }
 
   return (
-    <main className='container mx-auto min-h-screen px-6 py-10 pt-[80px] md:pt-[100px]'>
+    <main className='container mx-auto min-h-screen px-6 py-10 pt-[90px] md:pt-[130px]'>
       {content}
     </main>
   );

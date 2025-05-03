@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Title } from '@/features/shared/ui/Title';
 
 export default function Loading() {
-  <main className='min-h-screen flex flex-col justify-center items-center gap-6 -mt-30'>
+  <main className='min-h-screen flex flex-col justify-center items-center gap-6  -mt-25'>
     <Image
       src='/images/shared/pokeball.svg'
       alt='Pokeball'

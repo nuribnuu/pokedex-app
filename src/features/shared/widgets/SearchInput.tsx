@@ -15,7 +15,7 @@ type SearchInputProps = {
 };
 
 export const SearchInput: React.FC<SearchInputProps> = ({
-  placeholder = 'Search poke name',
+  placeholder = 'Search Pokémon',
   onChange,
   className,
   isHeroSection = false,
@@ -60,18 +60,37 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   };
 
   return (
-    <div className={clsx('relative w-full max-w-[518px]', className)}>
+    <div
+      className={clsx(
+        'relative w-full max-w-[90vw] sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl',
+        className
+      )}
+    >
       <input
         type='text'
         value={searchTerm}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
-        className='w-full rounded-full px-4 md:px-6 py-3 md:py-4 bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent text-neutral-900 text-xl '
+        className='
+          w-full rounded-full 
+          px-4 sm:px-5 md:px-6 
+          py-2.5 sm:py-3 md:py-4 
+          bg-neutral-100 
+          focus:outline-none focus:ring-2 focus:ring-neutral-900 
+          text-neutral-900 
+          text-base sm:text-lg md:text-xl
+          placeholder:text-sm sm:placeholder:text-base md:placeholder:text-lg
+        '
       />
 
       <button
-        className='absolute right-4 top-1/2 -translate-y-1/2 bg-[#3663AD] hover:bg-[#86a8df] p-1 md:p-2 rounded-full text-neutral-25'
+        className='
+          absolute right-4 top-1/2 -translate-y-1/2 
+          bg-[#3663AD] hover:bg-[#86a8df] 
+          p-1 sm:p-1.5 md:p-2 
+          rounded-full text-neutral-25
+        '
         onClick={() => {
           if (searchTerm.trim()) {
             router.push(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
@@ -85,7 +104,11 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         <button
           type='button'
           onClick={handleClear}
-          className='absolute right-12 md:right-16 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600'
+          className='
+            absolute right-12 sm:right-14 md:right-16 
+            top-1/2 -translate-y-1/2 
+            text-neutral-400 hover:text-neutral-600
+          '
         >
           <RoundedCloseIcon />
         </button>
