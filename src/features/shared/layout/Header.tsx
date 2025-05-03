@@ -60,7 +60,7 @@ export const Header: FC = () => {
         {showSearch && (
           <div className='max-w-xs w-full'>
             <SearchInput
-              placeholder='Search Pokémon'
+              placeholder='Search poke name'
               className='!text-[2vh] md:!text-[2.5vh]'
               onChange={(value) => {
                 const newQuery = value ? `?q=${encodeURIComponent(value)}` : '';

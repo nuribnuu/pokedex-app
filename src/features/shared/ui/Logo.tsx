@@ -29,7 +29,7 @@ export const Logo: React.FC<LogoProps> = ({ hideText = false }) => {
           hideText && 'hidden md:inline'
         )}
       >
-        Pokedex
+        findpoke
       </span>
     </Link>
   );
