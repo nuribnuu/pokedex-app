@@ -2,6 +2,9 @@
 
 import type { Metadata } from 'next';
 import './styles/globals.css';
+import { ReactNode, Suspense } from 'react';
+import Image from 'next/image';
+import { Title } from '@/features/shared/ui/Title';
 import { Header } from '@/features/shared/layout/Header';
 import { Footer } from '@/features/shared/layout/Footer';
 
@@ -13,14 +16,29 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang='en'>
       <body className='font-poppins'>
-        <Header />
-        {children}
-        <Footer />
+        <Suspense
+          fallback={
+            <div className='min-h-screen flex flex-col justify-center items-center bg-gray-50'>
+              <Image
+                src='/images/shared/pokeball.svg'
+                alt='Loading…'
+                width={100}
+                height={100}
+                className='animate-spin'
+              />
+              <Title className='text-lg text-gray-700 mt-4'>Loading…</Title>
+            </div>
+          }
+        >
+          <Header />
+          {children}
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );

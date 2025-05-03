@@ -1,7 +1,6 @@
 // src/app/detail/[id]/page.tsx
 
 import React from 'react';
-
 import { PokemonDetailSection } from '@/features/detail/section/PokemonDetailSection';
 import { PokemonEvolutionSection } from '@/features/detail/section/PokemonEvolutionSection';
 import { fetchPokemonDetail } from '@/features/detail/api/fetchPokemonDetail';
@@ -10,27 +9,27 @@ import { Title } from '@/features/shared/ui/Title';
 export default async function DetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = params;
+  const { id } = await params;
   let data = null;
 
   try {
     data = await fetchPokemonDetail(id);
   } catch (error) {
-    console.error('Error fetching Pokemon details:', error);
+    console.error('Error fetching Pokémon details:', error);
   }
 
   if (!data) {
     return (
-      <main className='min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10'>
+      <main className="min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10">
         <Title>Error fetching Pokémon details. Please try again later.</Title>
       </main>
     );
   }
 
   return (
-    <main className='min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10'>
+    <main className="min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10">
       <PokemonDetailSection
         identity={{
           id: data.id,
