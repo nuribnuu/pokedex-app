@@ -5,6 +5,7 @@ import { PokemonDetailSection } from '@/features/detail/section/PokemonDetailSec
 import { PokemonEvolutionSection } from '@/features/detail/section/PokemonEvolutionSection';
 import { fetchPokemonDetail } from '@/features/detail/api/fetchPokemonDetail';
 import { Title } from '@/features/shared/ui/Title';
+import { ScrollToTop } from '@/features/detail/utils/scrollToTop';
 
 export default async function DetailPage({
   params,
@@ -22,14 +23,15 @@ export default async function DetailPage({
 
   if (!data) {
     return (
-      <main className="min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10">
+      <main className='min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10'>
         <Title>Error fetching Pokémon details. Please try again later.</Title>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10">
+    <main className='min-h-screen pt-[80px] md:pt-[120px] container mx-auto px-6 py-10'>
+      <ScrollToTop />
       <PokemonDetailSection
         identity={{
           id: data.id,
