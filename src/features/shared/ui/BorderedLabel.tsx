@@ -1,6 +1,5 @@
 // src/features/shared/ui/BorderedLabel.tsx
 
-import { FC } from 'react';
 import clsx from 'clsx';
 
 type BorderedLabelProps = {
@@ -8,7 +7,10 @@ type BorderedLabelProps = {
   className?: string;
 };
 
-export const BorderedLabel: FC<BorderedLabelProps> = ({ label, className }) => {
+export const BorderedLabel: React.FC<BorderedLabelProps> = ({
+  label,
+  className,
+}) => {
   return (
     <div
       className={clsx(

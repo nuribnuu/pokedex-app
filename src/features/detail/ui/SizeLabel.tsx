@@ -1,6 +1,5 @@
 // src/features/detail/ui/SizeLabel.tsx
 
-import { FC } from 'react';
 import clsx from 'clsx';
 
 type SizeLabelProps = {
@@ -9,7 +8,7 @@ type SizeLabelProps = {
   className?: string;
 };
 
-export const SizeLabel: FC<SizeLabelProps> = ({ icon, label, className }) => {
+export const SizeLabel: React.FC<SizeLabelProps> = ({ icon, label, className }) => {
   return (
     <div
       className={clsx(

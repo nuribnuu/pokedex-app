@@ -1,6 +1,5 @@
 // src/features/shared/ui/Icons.tsx
 
-import { FC } from 'react';
 import clsx from 'clsx';
 
 type IconProps = {
@@ -9,7 +8,7 @@ type IconProps = {
 
 const iconSize = 'size-4.5 md:size-6';
 
-export const SearchIcon: FC<IconProps> = ({ className = '' }) => {
+export const SearchIcon: React.FC<IconProps> = ({ className = '' }) => {
   return (
     <svg
       width='24'
@@ -31,7 +30,7 @@ export const SearchIcon: FC<IconProps> = ({ className = '' }) => {
   );
 };
 
-export const CloseIcon: FC<IconProps> = ({ className = '' }) => {
+export const CloseIcon: React.FC<IconProps> = ({ className = '' }) => {
   return (
     <svg
       width='24'
@@ -52,7 +51,7 @@ export const CloseIcon: FC<IconProps> = ({ className = '' }) => {
   );
 };
 
-export const ChevronUpIcon: FC<IconProps> = ({ className = '' }) => {
+export const ChevronUpIcon: React.FC<IconProps> = ({ className = '' }) => {
   return (
     <svg
       width='24'
@@ -73,7 +72,7 @@ export const ChevronUpIcon: FC<IconProps> = ({ className = '' }) => {
   );
 };
 
-export const ArrowLeftIcon: FC<IconProps> = ({ className = '' }) => {
+export const ArrowLeftIcon: React.FC<IconProps> = ({ className = '' }) => {
   return (
     <svg
       width='24'
@@ -95,7 +94,7 @@ export const ArrowLeftIcon: FC<IconProps> = ({ className = '' }) => {
   );
 };
 
-export const RoundedCloseIcon: FC<IconProps> = ({ className = '' }) => {
+export const RoundedCloseIcon: React.FC<IconProps> = ({ className = '' }) => {
   return (
     <svg
       width='24'
@@ -135,7 +134,7 @@ export const RoundedCloseIcon: FC<IconProps> = ({ className = '' }) => {
   );
 };
 
-export const WeightIcon: FC<IconProps> = ({ className = '' }) => {
+export const WeightIcon: React.FC<IconProps> = ({ className = '' }) => {
   return (
     <svg
       width='24'
@@ -153,7 +152,7 @@ export const WeightIcon: FC<IconProps> = ({ className = '' }) => {
   );
 };
 
-export const RulerIcon: FC<IconProps> = ({ className = '' }) => {
+export const RulerIcon: React.FC<IconProps> = ({ className = '' }) => {
   return (
     <svg
       width='24'
@@ -170,3 +169,21 @@ export const RulerIcon: FC<IconProps> = ({ className = '' }) => {
     </svg>
   );
 };
+
+export const ChevronLeftIcon = ({ className = '' }) => (
+  <svg
+    width='24'
+    height='24'
+    viewBox='0 0 28 28'
+    fill='none'
+    className={clsx(iconSize, className)}
+  >
+    <path
+      d='M16.3333 8.16683L10.5 14.0002L16.3333 19.8335'
+      stroke='currentColor'
+      strokeWidth='2.33333'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+);

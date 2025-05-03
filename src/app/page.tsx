@@ -1,11 +1,11 @@
 // src/app/page.tsx
 
 import { HeroSection } from '@/features/home/section/HeroSection';
-import { getPokemons } from '@/features/shared/api/getPokemons';
 import { PokemonListSection } from '@/features/home/section/PokemonListSection';
+import { fetchPokemonByBatch } from '@/features/shared/api/fetchPokemonsByBatch';
 
 export default async function HomePage() {
-  const pokemons = await getPokemons();
+  const pokemons = await fetchPokemonByBatch(50, 0);
   return (
     <main>
       <HeroSection />

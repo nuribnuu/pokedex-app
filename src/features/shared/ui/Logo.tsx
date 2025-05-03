@@ -1,6 +1,5 @@
 // src/features/shared/ui/Logo.tsx
 
-import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -9,7 +8,7 @@ type LogoProps = {
   hideText?: boolean;
 };
 
-export const Logo: FC<LogoProps> = ({ hideText = false }) => {
+export const Logo: React.FC<LogoProps> = ({ hideText = false }) => {
   return (
     <Link
       href='/'

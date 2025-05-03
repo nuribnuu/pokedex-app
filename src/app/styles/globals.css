@@ -1,9 +1,8 @@
+/* src/app/styles/globals.css */
+
 @import 'tailwindcss';
 
 @theme {
-  /* font family */
-  /* --font-poppins: 'Poppins', sans-serif; */
-
   /* colors */
   --color-neutral-25: #fdfdfd;
   --color-neutral-50: #fafafa;

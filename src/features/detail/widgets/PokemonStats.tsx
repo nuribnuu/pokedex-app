@@ -1,6 +1,5 @@
 // src/features/detail/widgets/PokemonStats.tsx
 
-import { FC } from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import { Stat } from '../ui/Stat';
 
@@ -11,7 +10,7 @@ type PokemonStatsProps = {
   }[];
 };
 
-export const PokemonStats: FC<PokemonStatsProps> = ({
+export const PokemonStats: React.FC<PokemonStatsProps> = ({
   stats,
 }) => {
   return (

@@ -1,6 +1,5 @@
 // src/features/detail/widgets/PokemonIdentitiy.tsx
 
-import { FC } from 'react';
 import Image from 'next/image';
 import { ID } from '../ui/ID';
 import { Title } from '@/features/shared/ui/Title';
@@ -14,7 +13,7 @@ type PokemonIdentitiyProps = {
   };
 };
 
-export const PokemonIdentitiy: FC<PokemonIdentitiyProps> = ({
+export const PokemonIdentitiy: React.FC<PokemonIdentitiyProps> = ({
   identity: { id, name, description },
 }) => {
   return (

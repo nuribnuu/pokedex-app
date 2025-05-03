@@ -5,13 +5,9 @@ import Image from 'next/image';
 import { ID } from '@/features/detail/ui/ID';
 import { Title } from '../ui/Title';
 import { BorderedLabel } from '../ui/BorderedLabel';
+import { PokemonSummary } from '../types';
 
-type PokemonCardProps = {
-  id: string;
-  name: string;
-  imageUrl: string;
-  abilities?: string[];
-};
+type PokemonCardProps = PokemonSummary;
 
 export const PokemonCard: React.FC<PokemonCardProps> = ({
   id,
@@ -20,7 +16,10 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
   abilities,
 }) => {
   return (
-    <div className='w-full md:max-w-sm rounded-3xl border border-neutral-300 p-4 md:p-6 bg-neutral-25 flex flex-col md:gap-6'>
+    <div
+      className='w-full md:max-w-sm rounded-3xl border border-neutral-300 p-4 md:p-6 bg-neutral-25 flex flex-col md:gap-6 
+  transition  ease-in-out hover:shadow-lg hover:scale-95 duration-200'
+    >
       <Image
         src={imageUrl}
         alt={name}

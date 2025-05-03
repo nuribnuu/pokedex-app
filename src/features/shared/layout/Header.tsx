@@ -7,6 +7,7 @@ import { FC, useEffect, useState } from 'react';
 import { Logo } from '@/features/shared/ui/Logo';
 import { SearchInput } from '@/features/shared/widgets/SearchInput';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 
 export const Header: FC = () => {
   const pathname = usePathname();
@@ -30,13 +31,16 @@ export const Header: FC = () => {
   }, [pathname]);
 
   return (
-    <header
+    <motion.header
       className={clsx(
-        'fixed top-0 z-999 w-full transition-colors',
+        'fixed top-0 z-99 w-full transition-colors',
         showSearch
           ? 'bg-white shadow-[0px_4px_24px_0px_#B4B2B240]'
           : 'bg-primary-300'
       )}
+      initial={{ y: -60, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
     >
       <div
         className={clsx(
@@ -44,7 +48,14 @@ export const Header: FC = () => {
           showSearch && 'md:justify-between'
         )}
       >
-        <Logo hideText={showSearch} />
+        <motion.div
+          key={`logo-${showSearch ? 'hide' : 'show'}`}
+          initial={{ opacity: 0, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Logo hideText={showSearch} />
+        </motion.div>
 
         {showSearch && (
           <div className='max-w-xs w-full'>
@@ -59,6 +70,6 @@ export const Header: FC = () => {
           </div>
         )}
       </div>
-    </header>
+    </motion.header>
   );
 };

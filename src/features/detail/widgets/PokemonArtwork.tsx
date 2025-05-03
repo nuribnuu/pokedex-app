@@ -1,6 +1,5 @@
 // src/features/detail/widgets/PokemonArtwork.tsx
 
-import { FC } from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import Image from 'next/image';
 
@@ -10,7 +9,7 @@ type PokemonArtworkProps = {
   };
 };
 
-export const PokemonArtwork: FC<PokemonArtworkProps> = ({
+export const PokemonArtwork: React.FC<PokemonArtworkProps> = ({
   artwork: { imageUrl },
 }) => {
   return (

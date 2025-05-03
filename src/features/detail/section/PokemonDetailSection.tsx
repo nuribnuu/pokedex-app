@@ -12,9 +12,9 @@ import { PokemonSize } from '../widgets/PokemonSize';
 import { PokemonArtwork } from '../widgets/PokemonArtwork';
 import { PokemonStats } from '../widgets/PokemonStats';
 import { Hr } from '../ui/Hr';
-import { usePokemonStore } from '@/features/shared/store/pokemonStore';
 import { Title } from '@/features/shared/ui/Title';
-import { BackButton } from '@/features/shared/widgets/BackButton';
+import { PageHeader } from '@/features/shared/widgets/PageHeader';
+import { motion } from 'framer-motion';
 
 type PokemonDetailSectionProps = {
   identity: {
@@ -46,7 +46,6 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
   artwork,
   stats,
 }) => {
-  const selectedImageUrl = usePokemonStore((state) => state.selectedImageUrl);
   const searchParams = useSearchParams();
   const [imageUrl, setImageUrl] = useState<string>('');
 
@@ -56,22 +55,37 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
     if (queryImageUrl) {
       setImageUrl(queryImageUrl);
       sessionStorage.setItem('imageUrl', queryImageUrl);
-    } else if (selectedImageUrl) {
-      setImageUrl(selectedImageUrl);
-      sessionStorage.setItem('imageUrl', selectedImageUrl);
     } else {
       const stored = sessionStorage.getItem('imageUrl');
       if (stored) setImageUrl(stored);
     }
-  }, [searchParams, selectedImageUrl]);
+  }, [searchParams]);
 
   return (
     <section className='flex flex-col gap-2 md:gap-5 w-full'>
-      <div>
-        <BackButton />
-      </div>
-      <div className='flex flex-col lg:flex-row'>
-        <div className='lg:w-2/5 xl:w-1/2 flex items-center justify-center'>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <PageHeader title={`Detail of ${identity.name}`} />
+      </motion.div>
+
+      <motion.div
+        className='flex flex-col lg:flex-row'
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className='lg:w-2/5 xl:w-1/2 flex items-center justify-center'
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
           {imageUrl ? (
             <Image
               className='object-cover mx-auto size-80 xl:size-100 2xl:size-120'
@@ -83,31 +97,60 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
           ) : (
             <Title>Loading image...</Title>
           )}
-        </div>
-        <div className='flex flex-col gap-4 md:gap-6 lg:w-3/5 xl:w-1/2'>
+        </motion.div>
+
+        <motion.div
+          className='flex flex-col gap-4 md:gap-6 lg:w-3/5 xl:w-1/2'
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <PokemonIdentitiy identity={identity} />
           <Hr className='lg:hidden' />
-          <div className='w-3/4 flex flex-col md:flex-row gap-4 md:gap-6'>
+
+          <motion.div
+            className='w-3/4 flex flex-col md:flex-row gap-4 md:gap-6'
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             <div className='md:w-1/2'>
               <PokemonType type={type} />
             </div>
             <div className='md:w-1/2'>
               <PokemonAbilities abilities={abilities} />
             </div>
-          </div>
-          <div className='w-3/4 flex flex-col md:flex-row gap-4 md:gap-6'>
+          </motion.div>
+
+          <motion.div
+            className='w-3/4 flex flex-col md:flex-row gap-4 md:gap-6'
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             <div className='md:w-1/2'>
               <PokemonSize size={size} />
             </div>
             <div className='md:w-1/2'>
               <PokemonArtwork artwork={artwork} />
             </div>
-          </div>
+          </motion.div>
 
-          <PokemonStats stats={stats} />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <PokemonStats stats={stats} />
+          </motion.div>
+
           <Hr className='lg:hidden' />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

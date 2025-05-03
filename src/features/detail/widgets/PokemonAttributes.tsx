@@ -1,6 +1,5 @@
 // src/features/detail/widgets/PokemonAttributes.tsx
 
-import { FC } from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import { BorderedLabel } from '@/features/shared/ui/BorderedLabel';
 
@@ -9,7 +8,7 @@ type PokemonAttributesProps = {
   attributes: string[];
 };
 
-export const PokemonAttributes: FC<PokemonAttributesProps> = ({
+export const PokemonAttributes: React.FC<PokemonAttributesProps> = ({
   title,
   attributes,
 }) => {

@@ -1,21 +1,18 @@
 // src/features/shared/store/pokemonStore.ts
 
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { PokemonSummary } from '../types';
 
-interface PokemonStore {
-  selectedImageUrl: string;
-  setSelectedImageUrl: (url: string) => void;
-}
+type PokemonStore = {
+  pokemonList: PokemonSummary[];
+  offset: number;
+  setPokemonList: (pokemonList: PokemonSummary[]) => void;
+  setOffset: (offset: number) => void;
+};
 
-export const usePokemonStore = create<PokemonStore>()(
-  persist(
-    (set) => ({
-      selectedImageUrl: '',
-      setSelectedImageUrl: (url) => set({ selectedImageUrl: url }),
-    }),
-    {
-      name: 'selected-image-url',
-    }
-  )
-);
+export const usePokemonStore = create<PokemonStore>((set) => ({
+  pokemonList: [],
+  offset: 0,
+  setPokemonList: (pokemonList) => set({ pokemonList }),
+  setOffset: (offset) => set({ offset }),
+}));

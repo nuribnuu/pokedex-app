@@ -2,17 +2,14 @@
 
 'use client';
 
-import { usePokemonStore } from '@/features/shared/store/pokemonStore';
-import { Title } from '@/features/shared/ui/Title';
+import { PokemonSummary } from '@/features/shared/types';
+import { PageHeader } from '@/features/shared/widgets/PageHeader';
 import { PokemonCard } from '@/features/shared/widgets/PokemonCard';
+import { ScrollButton } from '@/features/shared/widgets/ScrollButton';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
-type Pokemon = {
-  id: string;
-  name: string;
-  imageUrl: string;
-  abilities?: string[];
-};
+type Pokemon = PokemonSummary;
 
 type SearchResultsSectionProps = {
   results: Pokemon[];
@@ -23,30 +20,53 @@ export const SearchResultsSection = ({
   results,
   query,
 }: SearchResultsSectionProps) => {
-  const setSelectedImageUrl = usePokemonStore(
-    (state) => state.setSelectedImageUrl
-  );
-
   return (
     <section className='flex flex-col gap-6'>
-      <Title variant='md'>Results for &quot;{query}&quot;</Title>
+      {/* Animated PageHeader */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        viewport={{ once: true }}
+      >
+        <PageHeader title={`Results for "${query}"`} />
+      </motion.div>
 
-      <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6'>
+      {/* Animated Grid of Pokemon Cards */}
+      <motion.div
+        className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        viewport={{ once: true }}
+      >
         {results.map((pokemon) => (
           <Link
-            href={`/detail/${pokemon.id}`}
+            href={{
+              pathname: `/detail/${pokemon.id}`,
+              query: { imageUrl: pokemon.imageUrl },
+            }}
             key={pokemon.id}
-            onClick={() => setSelectedImageUrl(pokemon.imageUrl)}
           >
-            <PokemonCard
-              id={pokemon.id}
-              name={pokemon.name}
-              imageUrl={pokemon.imageUrl}
-              abilities={pokemon.abilities}
-            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: false }}
+            >
+              <PokemonCard
+                id={pokemon.id}
+                name={pokemon.name}
+                imageUrl={pokemon.imageUrl}
+                abilities={pokemon.abilities}
+              />
+            </motion.div>
           </Link>
         ))}
-      </div>
+      </motion.div>
+
+      {/* Animated ScrollButton */}
+      <ScrollButton />
     </section>
   );
 };

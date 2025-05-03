@@ -1,6 +1,5 @@
 // src/features/detail/widgets/PokemonSize.tsx
 
-import { FC } from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import { PokemonSizeItem } from './PokemonSizeItem';
 import { RulerIcon, WeightIcon } from '@/features/shared/ui/Icons';
@@ -12,7 +11,7 @@ type PokemonSizeProps = {
   };
 };
 
-export const PokemonSize: FC<PokemonSizeProps> = ({
+export const PokemonSize: React.FC<PokemonSizeProps> = ({
   size: { height, weight },
 }) => {
   return (

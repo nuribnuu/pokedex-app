@@ -1,6 +1,8 @@
+// src/features/shared/widgets/SearchInput.tsx
+
 'use client';
 
-import { FC, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import { RoundedCloseIcon, SearchIcon } from '../ui/Icons';
 import clsx from 'clsx';
@@ -12,7 +14,7 @@ type SearchInputProps = {
   isHeroSection?: boolean;
 };
 
-export const SearchInput: FC<SearchInputProps> = ({
+export const SearchInput: React.FC<SearchInputProps> = ({
   placeholder = 'Search Pokémon',
   onChange,
   className,

@@ -1,16 +1,26 @@
 // src/features/shared/widgets/BackButton.tsx
 
-import Link from 'next/link';
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { Button } from '../ui/Button';
 import { ArrowLeftIcon } from '../ui/Icons';
 
 export const BackButton = () => {
+  const router = useRouter();
+
+  const handleBackClick = () => {
+    router.back();
+  };
+
   return (
-    <Link href='/'>
-      <Button variant='secondary' className='flex items-center gap-2'>
-        <ArrowLeftIcon />
-        Back
-      </Button>
-    </Link>
+    <Button
+      variant='secondary'
+      className='flex items-center gap-2'
+      onClick={handleBackClick}
+    >
+      <ArrowLeftIcon />
+      Back
+    </Button>
   );
 };

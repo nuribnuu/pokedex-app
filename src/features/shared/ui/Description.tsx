@@ -1,6 +1,6 @@
 // src/features/detail/ui/Description.tsx
 
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import clsx from 'clsx';
 
 type DescriptionProps = {
@@ -15,12 +15,14 @@ const variantStyles = {
   light: 'font-normal text-neutral-700',
 };
 
-export const Description: FC<DescriptionProps> = ({
+export const Description: React.FC<DescriptionProps> = ({
   variant = 'light',
   children,
   className,
 }) => {
   return (
-    <p className={clsx(baseStyles, variantStyles[variant], className)}>{children}</p>
+    <p className={clsx(baseStyles, variantStyles[variant], className)}>
+      {children}
+    </p>
   );
 };

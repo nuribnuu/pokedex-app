@@ -1,4 +1,17 @@
-// src/features/detail/api/types.ts
+// src/features/shared/api/types.ts
+
+export type PokemonSummary = {
+  id: string;
+  name: string;
+  imageUrl: string;
+  abilities?: string[];
+};
+
+export type Ability = {
+  ability: {
+    name: string;
+  };
+};
 
 export type Type = {
   type: {
@@ -10,7 +23,7 @@ export type Stat = {
   base_stat: number;
   stat: {
     name: string;
-    value:number;
+    value: number;
   };
 };
 

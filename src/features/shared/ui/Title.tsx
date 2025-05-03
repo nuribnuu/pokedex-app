@@ -1,6 +1,6 @@
 // src/features/shared/ui/Title.tsx
 
-import { FC, ReactNode, ElementType } from 'react';
+import { ReactNode, ElementType } from 'react';
 import clsx from 'clsx';
 
 type TitleProps = {
@@ -18,7 +18,7 @@ const variantStyles: Record<NonNullable<TitleProps['variant']>, string> = {
   sm: 'text-lg md:text-xl font-semibold',
 };
 
-export const Title: FC<TitleProps> = ({
+export const Title: React.FC<TitleProps> = ({
   variant = 'sm',
   as: Tag = 'h3',
   children,

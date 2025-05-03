@@ -1,6 +1,5 @@
 // src/features/detail/ui/Stat.tsx
 
-import { FC } from 'react';
 import clsx from 'clsx';
 
 type StatProps = {
@@ -14,7 +13,7 @@ const getIndicatorColor = (value: number) => {
   return 'bg-green';
 };
 
-export const Stat: FC<StatProps> = ({ label, value }) => {
+export const Stat: React.FC<StatProps> = ({ label, value }) => {
   return (
     <div className='flex items-center justify-between gap-4 max-w-[310px] md:max-w-[450px]'>
       <span className='font-normal text-sm md:text-base text-neutral-900'>

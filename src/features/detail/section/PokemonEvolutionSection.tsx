@@ -17,7 +17,7 @@ export const PokemonEvolutionSection: React.FC<
 > = ({ evolutions }) => {
   return (
     <section className='flex flex-col gap-4 mt-6 w-full'>
-      <Title variant='md'>Evolution Chain</Title>
+      {evolutions.length > 0 && <Title variant='md'>Evolution Chain</Title>}
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6'>
         {evolutions.map((pokemon) => (
           <PokemonCard

@@ -1,6 +1,6 @@
-// src/features/shared/widgets/PokemonSizeItem.tsx
+// src/features/detail/widgets/PokemonSizeItem.tsx
 
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { SizeLabel } from '../ui/SizeLabel';
 import { SizeValue } from '../ui/SizeValue';
 
@@ -11,7 +11,12 @@ type PokemonSizeItemProps = {
   unit: string;
 };
 
-export const PokemonSizeItem: FC<PokemonSizeItemProps> = ({ icon, label, value, unit }) => {
+export const PokemonSizeItem: React.FC<PokemonSizeItemProps> = ({
+  icon,
+  label,
+  value,
+  unit,
+}) => {
   return (
     <div className='flex flex-col'>
       <SizeLabel icon={icon} label={label} />

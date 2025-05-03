@@ -1,6 +1,6 @@
 // src/feateres/shared/ui/Button.tsx
 
-import { FC, ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import clsx from 'clsx';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -13,10 +13,10 @@ const baseStyles =
 const variantStyles: Record<NonNullable<ButtonProps['variant']>, string> = {
   primary:
     'w-[180px] h-[44px] md:w-[237px] md:h-[52px] border border-neutral-300 rounded-full font-bold hover:bg-neutral-300',
-  secondary: 'font-medium hover:underline',
+  secondary: 'font-medium text-xl hover:underline',
 };
 
-export const Button: FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   className,
   children,
   variant = 'primary',
