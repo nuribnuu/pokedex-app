@@ -7,13 +7,11 @@ import { PokemonEvolutionSection } from '@/features/detail/section/PokemonEvolut
 import { fetchPokemonDetail } from '@/features/detail/api/fetchPokemonDetail';
 import { Title } from '@/features/shared/ui/Title';
 
-type DetailPageProps = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function DetailPage({ params }: DetailPageProps) {
+export default async function DetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const { id } = params;
   let data = null;
 
