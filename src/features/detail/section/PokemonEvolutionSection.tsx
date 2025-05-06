@@ -6,6 +6,7 @@ import React from 'react';
 import { Title } from '@/features/shared/ui/Title';
 import { PokemonCard } from '@/features/shared/widgets/PokemonCard';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 type PokemonEvolutionSectionProps = {
   evolutions: {
@@ -30,11 +31,24 @@ export const PokemonEvolutionSection: React.FC<
             transition={{ duration: 0.4, delay: index * 0.1 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <PokemonCard
-              id={pokemon.id}
-              name={pokemon.name}
-              imageUrl={pokemon.imageUrl}
-            />
+            <Link
+              href={{
+                pathname: `/detail/${pokemon.id}`,
+                query: { imageUrl: pokemon.imageUrl },
+              }}
+              key={`${pokemon.id}-${index}`}
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  sessionStorage.setItem('fromInternalNavigation', 'true');
+                }
+              }}
+            >
+              <PokemonCard
+                id={pokemon.id}
+                name={pokemon.name}
+                imageUrl={pokemon.imageUrl}
+              />
+            </Link>
           </motion.div>
         ))}
       </div>

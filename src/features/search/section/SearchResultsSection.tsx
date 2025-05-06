@@ -21,12 +21,13 @@ export const SearchResultsSection = ({
   query,
 }: SearchResultsSectionProps) => {
   return (
-    <section className='flex flex-col gap-6 '>
+    <section className='container mx-auto min-h-screen px-6 py-10 pt-[90px] md:pt-[130px]'>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
         viewport={{ once: true }}
+        className='mb-6'
       >
         <PageHeader title={`Results for "${query}"`} />
       </motion.div>
@@ -45,6 +46,9 @@ export const SearchResultsSection = ({
               query: { imageUrl: pokemon.imageUrl },
             }}
             key={pokemon.id}
+            onClick={() => {
+              sessionStorage.setItem('fromInternalNavigation', 'true');
+            }}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}

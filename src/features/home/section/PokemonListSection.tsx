@@ -32,8 +32,7 @@ export const PokemonListSection: React.FC<PokemonListSectionProps> = ({
         setPokemonList(parsed);
         setOffset(parsed.length);
         return;
-      } catch {
-      }
+      } catch {}
     }
 
     setPokemonList(pokemons);
@@ -85,6 +84,11 @@ export const PokemonListSection: React.FC<PokemonListSectionProps> = ({
               query: { imageUrl: pokemon.imageUrl },
             }}
             key={`${pokemon.id}-${index}`}
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                sessionStorage.setItem('fromInternalNavigation', 'true');
+              }
+            }}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}

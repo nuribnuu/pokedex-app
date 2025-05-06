@@ -33,12 +33,10 @@ export const fetchPokemonDetail = async (id: string) => {
     const extractEvolutions = (chain: EvolutionChain): string[] => {
       const names: string[] = [];
       let current: EvolutionChain | undefined = chain;
-
       while (current) {
         names.push(current.species.name);
         current = current.evolves_to[0];
       }
-
       return names;
     };
 
@@ -53,7 +51,7 @@ export const fetchPokemonDetail = async (id: string) => {
           return {
             id: evoData.id,
             name: capitalize(evoData.name),
-            imageUrl: evoData.sprites.front_default,
+            imageUrl: evoData.sprites.other['official-artwork'].front_default,
           };
         } catch (error) {
           console.error(`Error fetching evolution for ${name}:`, error);
@@ -62,12 +60,14 @@ export const fetchPokemonDetail = async (id: string) => {
       })
     );
 
-    const validEvolutions = evolutions.filter((evo) => evo !== null);
+    const validEvolutions = evolutions.filter(
+      (evo): evo is NonNullable<typeof evo> => evo !== null
+    );
 
     return {
-      id: id,
+      id,
       name: capitalize(data.name),
-      imageUrl: data.sprites.front_default,
+      imageUrl: data.sprites.other['official-artwork'].front_default,
       abilities: data.abilities.map((ability: Ability) =>
         capitalize(ability.ability.name)
       ),

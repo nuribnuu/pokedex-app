@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 type SearchEmptyStateSectionProps = {
   query?: string;
-  type: 'no-query' | 'no-results';
+  type: 'no-query' | 'no-results' | 'not-found';
 };
 
 export const SearchEmptyStateSection = ({
@@ -20,7 +20,18 @@ export const SearchEmptyStateSection = ({
         <div className='flex flex-col items-center gap-1 text-center'>
           <Title>Please enter a search query</Title>
           <Description>
-            No search query entered. Start typing to search for Pokémon!
+            No search query entered. Start typing to search for Pokémon
+          </Description>
+        </div>
+      );
+    }
+
+    if (type === 'no-results') {
+      return (
+        <div className='flex flex-col items-center gap-1 text-center'>
+          <Title>No results found for &quot;{query}&quot;</Title>
+          <Description>
+            Change your keywords or try a different Pokémon
           </Description>
         </div>
       );
@@ -28,34 +39,30 @@ export const SearchEmptyStateSection = ({
 
     return (
       <div className='flex flex-col items-center gap-1 text-center'>
-        <Title>No results found for &quot;{query}&quot;</Title>
+        <Title>404 - Page Not Found</Title>
         <Description>
-          Change your keywords or try a different Pokémon!
+          The page you are looking for does not exist
         </Description>
       </div>
     );
   };
 
   return (
-    <section>
-      <div className='flex min-h-screen flex-col items-center justify-center gap-6 -mt-25'>
-        <div>
-          <Image
-            src='/images/shared/pokeball.svg'
-            alt='Pokeball'
-            width={130}
-            height={130}
-            className='mx-auto size-23 md:size-32 object-cover'
-          />
-        </div>
+    <section className='flex min-h-screen flex-col items-center justify-center gap-6 bg-white'>
+      <div>
+        <Image
+          src='/images/shared/pokeball.svg'
+          alt='Pokeball'
+          width={130}
+          height={130}
+          className='mx-auto size-23 md:size-32 object-cover'
+        />
+      </div>
 
-        <div className='flex flex-col items-center gap-1'>
-          {renderContent()}
-        </div>
+      <div className='flex flex-col items-center gap-1'>{renderContent()}</div>
 
-        <div>
-          <BackButton />
-        </div>
+      <div>
+        <BackButton />
       </div>
     </section>
   );

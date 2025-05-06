@@ -2,14 +2,13 @@
 
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { fetchPokemonByBatch } from '@/features/shared/api/fetchPokemonsByBatch';
 import { PokemonSummary } from '@/features/shared/types';
-import { Title } from '@/features/shared/ui/Title';
 import { SearchEmptyStateSection } from '@/features/search/section/SearchEmptyStateSection';
 import { SearchResultsSection } from '@/features/search/section/SearchResultsSection';
+import { LoadingStatusMessage } from '@/features/shared/widgets/LoadingStatusMessage';
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
@@ -57,16 +56,7 @@ export default function SearchPage() {
     content = <SearchEmptyStateSection type='no-query' />;
   } else if (loading) {
     content = (
-      <div className='min-h-screen flex flex-col justify-center items-center gap-6  -mt-25'>
-        <Image
-          src='/images/shared/pokeball.svg'
-          alt='Pokeball'
-          width={130}
-          height={130}
-          className='mx-auto size-23 md:size-32 object-cover animate-spin'
-        />
-        <Title className='animate-pulse'>Loading...</Title>
-      </div>
+      <LoadingStatusMessage title='Loading' description='Please be patient' />
     );
   } else if (results.length === 0) {
     content = <SearchEmptyStateSection type='no-results' query={query} />;
@@ -74,9 +64,5 @@ export default function SearchPage() {
     content = <SearchResultsSection results={results} query={query} />;
   }
 
-  return (
-    <main className='container mx-auto min-h-screen px-6 py-10 pt-[90px] md:pt-[130px]'>
-      {content}
-    </main>
-  );
+  return <main>{content}</main>;
 }

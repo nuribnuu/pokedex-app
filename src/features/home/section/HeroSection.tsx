@@ -72,36 +72,6 @@ export const HeroSection: React.FC = () => {
           className='w-full'
         />
       </motion.div>
-
-      <motion.div
-        className='absolute bottom-0 sm:bottom-6 lg:bottom-10 xl:bottom-13 2xl:bottom-17 left-1/5 z-20 transform -translate-x-1/2'
-        initial={{ y: 100, opacity: 0, rotate: -10 }}
-        animate={{ y: 0, opacity: 1, rotate: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-      >
-        <Image
-          src='/images/home/charizard.svg'
-          alt='charizard'
-          width={160}
-          height={160}
-          className='w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64'
-        />
-      </motion.div>
-
-      <motion.div
-        className='absolute bottom-0 sm:bottom-6 lg:bottom-10 xl:bottom-13 2xl:bottom-17 right-1/5 z-20 transform translate-x-1/2'
-        initial={{ y: 100, opacity: 0, rotate: 10 }}
-        animate={{ y: 0, opacity: 1, rotate: 0 }}
-        transition={{ duration: 0.6, delay: 1 }}
-      >
-        <Image
-          src='/images/home/pikachu.svg'
-          alt='pikachu'
-          width={160}
-          height={160}
-          className='w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 2xl:w-64 2xl:h-64'
-        />
-      </motion.div>
     </section>
   );
 };

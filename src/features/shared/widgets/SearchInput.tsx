@@ -84,31 +84,32 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         '
       />
 
-      <button
-        className='
-          absolute right-4 top-1/2 -translate-y-1/2 
-          bg-[#3663AD] hover:bg-[#86a8df] 
-          p-1 sm:p-1.5 md:p-2 
-          rounded-full text-neutral-25
-        '
-        onClick={() => {
-          if (searchTerm.trim()) {
-            router.push(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
-          }
-        }}
-      >
-        <SearchIcon />
-      </button>
+      {isHeroSection && (
+        <button
+          className='
+      absolute right-4 top-1/2 -translate-y-1/2 
+      bg-[#3663AD] hover:bg-[#86a8df] 
+      p-1 sm:p-1.5 md:p-2 
+      rounded-full text-neutral-25
+    '
+          onClick={() => {
+            if (searchTerm.trim()) {
+              router.push(`/search?q=${encodeURIComponent(searchTerm.trim())}`);
+            }
+          }}
+        >
+          <SearchIcon />
+        </button>
+      )}
 
       {searchTerm && (
         <button
           type='button'
           onClick={handleClear}
-          className='
-            absolute right-12 sm:right-14 md:right-16 
-            top-1/2 -translate-y-1/2 
-            text-neutral-400 hover:text-neutral-600
-          '
+          className={clsx(
+            'absolute top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 ',
+            isHeroSection ? 'right-12 sm:right-14 md:right-16' : 'right-6'
+          )}
         >
           <RoundedCloseIcon />
         </button>
