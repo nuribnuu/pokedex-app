@@ -5,7 +5,8 @@ import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
-  PhoneIcon,
+  WhatsAppIcon,
+  MailIcon,
 } from '../ui/Icons';
 import Link from 'next/link';
 
@@ -44,7 +45,15 @@ export const Footer = () => {
             rel='noopener noreferrer'
             className='p-2 bg-neutral-200 rounded-md hover:bg-neutral-300 transition'
           >
-            <PhoneIcon className='size-5 text-neutral-700' />
+            <WhatsAppIcon className='size-5 text-neutral-700' />
+          </Link>
+          <Link
+            href='mailto:nuribnuu@gmail.com'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='p-2 bg-neutral-200 rounded-md hover:bg-neutral-300 transition'
+          >
+            <MailIcon className='size-5 text-neutral-700' />
           </Link>
         </div>
 

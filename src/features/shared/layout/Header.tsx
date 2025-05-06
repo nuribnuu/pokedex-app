@@ -35,7 +35,7 @@ export const Header: FC = () => {
       className={clsx(
         'fixed top-0 z-99 w-full transition-colors',
         showSearch
-          ? 'bg-white shadow-[0px_4px_24px_0px_#B4B2B240]'
+          ? 'bg-white border-b border-neutral-300'
           : 'bg-primary-300'
       )}
       initial={{ y: -60, opacity: 0 }}

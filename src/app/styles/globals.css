@@ -46,3 +46,17 @@ body {
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+@keyframes waveMotion {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.wave-motion {
+  animation: waveMotion 6s ease-in-out infinite;
+}

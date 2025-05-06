@@ -21,7 +21,9 @@ export const Logo: React.FC<LogoProps> = ({ hideText = false }) => {
     setIsSpinning(true);
     sessionStorage.setItem('fromInternalNavigation', 'true');
 
-    router.push('/');
+    setTimeout(() => {
+      router.push('/');
+    }, 1000);
   };
 
   return (

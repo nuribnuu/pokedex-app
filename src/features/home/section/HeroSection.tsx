@@ -69,7 +69,7 @@ export const HeroSection: React.FC = () => {
           alt='cloud'
           width={1440}
           height={120}
-          className='w-full'
+          className='w-full wave-motion'
         />
       </motion.div>
     </section>
