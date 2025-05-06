@@ -16,7 +16,7 @@ export const Footer = () => {
       <div className='container mx-auto px-4 flex flex-col md:flex-row justify-center md:justify-between items-center gap-2'>
         <div className='flex gap-2 md:gap-4'>
           <Link
-            href='https://github.com/nuribnuu'
+            href='https://github.com/muhammadnuribnuhubab'
             target='_blank'
             rel='noopener noreferrer'
             className='p-2 bg-neutral-200 rounded-md hover:bg-neutral-300 transition'
@@ -58,7 +58,7 @@ export const Footer = () => {
         </div>
 
         <small className='font-normal text-sm md:text-base text-neutral-600 text-center'>
-          © 2025 findpoké. All rights reserved.
+          © {new Date().getFullYear()} findpoké. All rights reserved.
         </small>
       </div>
     </footer>
