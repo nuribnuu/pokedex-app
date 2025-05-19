@@ -16,7 +16,7 @@ export const BackButton = () => {
   return (
     <Button
       variant='secondary'
-      className='flex items-center gap-2'
+      className='flex items-center gap-2 cursor-pointer'
       onClick={handleBackClick}
     >
       <ArrowLeftIcon />

@@ -17,7 +17,7 @@ export const PokemonStats: React.FC<PokemonStatsProps> = ({
     <div className='flex flex-col gap-2 md:gap-3'>
       <Title>Stats</Title>
 
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-2 w-full'>
         {stats.map((stat) => (
           <Stat key={stat.label} label={stat.label} value={stat.value} />
         ))}

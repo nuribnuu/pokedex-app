@@ -90,7 +90,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
       absolute right-4 top-1/2 -translate-y-1/2 
       bg-[#3663AD] hover:bg-[#86a8df] 
       p-1 sm:p-1.5 md:p-2 
-      rounded-full text-neutral-25
+      rounded-full text-neutral-25 cursor-pointer
     '
           onClick={() => {
             if (searchTerm.trim()) {
@@ -107,7 +107,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
           type='button'
           onClick={handleClear}
           className={clsx(
-            'absolute top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 ',
+            'absolute top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 cursor-pointer',
             isHeroSection ? 'right-12 sm:right-14 md:right-16' : 'right-6'
           )}
         >

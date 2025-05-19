@@ -114,7 +114,7 @@ export const PokemonListSection: React.FC<PokemonListSectionProps> = ({
         transition={{ duration: 0.5, delay: 0.5 }}
       >
         <Button
-          className='mx-auto'
+          className='mx-auto cursor-pointer'
           onClick={loadMorePokemons}
           disabled={loading}
         >

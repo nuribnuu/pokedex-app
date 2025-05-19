@@ -18,9 +18,9 @@ export const SearchEmptyStateSection = ({
     if (type === 'no-query') {
       return (
         <div className='flex flex-col items-center gap-1 text-center'>
-          <Title>Please enter a search query</Title>
+          <Title>Please enter a keyword</Title>
           <Description>
-            No search query entered. Start typing to search for Pokémon
+            No keyword entered. Start typing to search for Pokémon
           </Description>
         </div>
       );
@@ -31,7 +31,7 @@ export const SearchEmptyStateSection = ({
         <div className='flex flex-col items-center gap-1 text-center'>
           <Title>No results found for &quot;{query}&quot;</Title>
           <Description>
-            Change your keywords or try a different Pokémon
+            Change your keyword or try a different Pokémon
           </Description>
         </div>
       );

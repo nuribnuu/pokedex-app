@@ -36,7 +36,7 @@ export const ScrollButton: React.FC = () => {
   return (
     <Button
       onClick={isAtBottom ? scrollToTop : scrollToBottom}
-      className={`fixed right-4 2xl:right-auto 2xl:left-1/2 2xl:translate-x-[calc(780px-100%)] p-3 !size-16 rounded-full shadow-lg flex items-center justify-center z-50 transition-all duration-300 ${
+      className={`fixed right-4 2xl:right-auto 2xl:left-1/2 2xl:translate-x-[calc(780px-100%)] p-3 !size-16 rounded-full shadow-lg flex items-center justify-center z-50 transition-all duration-300 cursor-pointer ${
         isNearBottom ? 'bottom-6 md:bottom-16' : 'bottom-6 md:bottom-10'
       }`}
       aria-label={isAtBottom ? 'Scroll to top' : 'Scroll to bottom'}

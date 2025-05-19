@@ -22,7 +22,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
   return (
     <div
       className='w-full md:max-w-sm rounded-3xl border border-neutral-300 p-4 md:p-6 bg-neutral-25 flex flex-col md:gap-6 
-        transition ease-in-out hover:shadow-lg hover:scale-95 duration-200  min-h-[350px] justify-center'
+        transition ease-in-out hover:shadow-lg hover:scale-95 duration-200 min-h-[350px] lg:min-h-[400px] justify-center'
     >
       <div className='relative w-full aspect-[1/1] max-w-[200px] md:max-w-[250px] mx-auto'>
         {isLoading && (
