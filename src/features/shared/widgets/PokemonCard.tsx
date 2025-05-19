@@ -22,7 +22,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
   return (
     <div
       className='w-full md:max-w-sm rounded-3xl border border-neutral-300 p-4 md:p-6 bg-neutral-25 flex flex-col md:gap-6 
-        transition ease-in-out hover:shadow-lg hover:scale-95 duration-200'
+        transition ease-in-out hover:shadow-lg hover:scale-95 duration-200  min-h-[350px] justify-center'
     >
       <div className='relative w-full aspect-[1/1] max-w-[200px] md:max-w-[250px] mx-auto'>
         {isLoading && (
@@ -39,14 +39,14 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({
         />
       </div>
 
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-2 '>
         <div>
           <ID>{id}</ID>
           <Title variant='sm'>{name}</Title>
         </div>
 
         {abilities && abilities.length > 0 && (
-          <div className='flex center gap-2 flex-wrap'>
+          <div className='flex  gap-2 flex-wrap'>
             {abilities.slice(0, 3).map((ability, index) => (
               <BorderedLabel key={`${ability}-${index}`} label={ability} />
             ))}

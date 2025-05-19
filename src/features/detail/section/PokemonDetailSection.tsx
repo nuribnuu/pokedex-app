@@ -72,14 +72,14 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
       </motion.div>
 
       <motion.div
-        className='flex flex-col lg:flex-row'
+        className='flex flex-col lg:flex-row w-full'
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
         <motion.div
-          className='lg:w-2/5 xl:w-1/2 flex items-center justify-center'
+          className='lg:w-2/5 xl:w-full flex items-center justify-center'
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -99,7 +99,7 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
         </motion.div>
 
         <motion.div
-          className='flex flex-col gap-4 md:gap-6 lg:w-3/5 xl:w-1/2'
+          className='flex flex-col gap-4 md:gap-6 lg:w-3/5 xl:w-full'
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -109,7 +109,7 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
           <Hr className='lg:hidden' />
 
           <motion.div
-            className='w-3/4 flex flex-col md:flex-row gap-4 md:gap-6'
+            className='w-full flex flex-col md:flex-row gap-4 md:gap-6'
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -124,7 +124,7 @@ export const PokemonDetailSection: React.FC<PokemonDetailSectionProps> = ({
           </motion.div>
 
           <motion.div
-            className='w-3/4 flex flex-col md:flex-row gap-4 md:gap-6'
+            className='w-full flex flex-col md:flex-row gap-4 md:gap-6'
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
