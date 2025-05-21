@@ -1,6 +1,6 @@
 # 🦸‍♂️ Pokedex App
 
-A modern Pokedex app built with **Next.js** and **TypeScript**, allowing users to search for Pokémon, view their detailed information, and explore their evolution chain. The app uses **PokéAPI** for fetching Pokémon data and **Zustand** for state management. Live demo: [findpoke.vercel.app](https://findpoke.vercel.app)
+A simple and fun app to search, explore, and view details of various Pokemon.
 
 [![Vercel Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-000?logo=vercel&logoColor=white)](https://vercel.com)  
 [![Next.js](https://img.shields.io/badge/built%20with-Next.js-000?logo=next.js)](https://nextjs.org)  
@@ -12,13 +12,13 @@ A modern Pokedex app built with **Next.js** and **TypeScript**, allowing users t
 
 ### 🏠 Home Page
 
-- **Hero Section** with a search bar for Pokémon by name/ID
+- **Hero Section** with a search bar for Pokemon by name/ID
 - **Live search** in the header that filters results as you type
-- List of Pokémon with names, types, and images
+- List of Pokemon with names, types, and images
 
-### 📄 Pokémon Detail Page
+### 📄 Pokemon Detail Page
 
-- Show detailed information about a selected Pokémon, including:
+- Show detailed information about a selected Pokemon, including:
   - ID, Name, Description
   - Type(s)
   - Abilities
@@ -29,7 +29,7 @@ A modern Pokedex app built with **Next.js** and **TypeScript**, allowing users t
 
 ### 💡 State Management
 
-- **Zustand** for state management to handle app-wide state (e.g., selected Pokémon, search query)
+- **Zustand** for state management to handle app-wide state (e.g., selected Pokemon, search query)
 
 ### 💡 Responsive UI
 
@@ -45,7 +45,7 @@ A modern Pokedex app built with **Next.js** and **TypeScript**, allowing users t
 - **Tailwind CSS**
 - **Zustand**
 - **Framer Motion**
-- **PokéAPI** (for Pokémon data)
+- **PokeAPI** (for Pokemon data)
 
 ---
 
@@ -69,7 +69,7 @@ Visit: [http://localhost:3000](http://localhost:3000)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 - [Framer Motion Docs](https://www.framer.com/motion/)
 - [Zustand Docs](https://github.com/pmndrs/zustand)
-- [PokéAPI Docs](https://pokeapi.co/docs/v2)
+- [PokeAPI Docs](https://pokeapi.co/docs/v2)
 
 ---
 

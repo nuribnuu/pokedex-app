@@ -15,7 +15,7 @@ type SearchInputProps = {
 };
 
 export const SearchInput: React.FC<SearchInputProps> = ({
-  placeholder = 'Search Pokémon',
+  placeholder = 'Search Pokemon',
   onChange,
   className,
   isHeroSection = false,

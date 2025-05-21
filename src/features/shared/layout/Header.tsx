@@ -60,7 +60,7 @@ export const Header: FC = () => {
         {showSearch && (
           <div className='max-w-xs w-full'>
             <SearchInput
-              placeholder='Search Pokémon'
+              placeholder='Search Pokemon'
               onChange={(value) => {
                 const newQuery = value ? `?q=${encodeURIComponent(value)}` : '';
                 router.push(`/search${newQuery}`);

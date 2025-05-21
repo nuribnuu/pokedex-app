@@ -42,7 +42,7 @@ export const HeroSection: React.FC = () => {
             as='h1'
             className='max-w-[300px] md:max-w-2xl lg:max-w-5xl font-bold text-2xl md:text-2xl lg:text-4xl'
           >
-            Find Pokémon Details
+            Find Pokemon Details
           </Title>
         </motion.div>
 
