@@ -12,20 +12,20 @@ A simple and fun app to search, explore, and view details of various Pokemon.
 
 ### 🏠 Home Page
 - Hero section with search bar (search by name or ID)
-- Browse Pokémon list with names, types, and images
+- Browse Pokemon list with names, types, and images
 - Pagination or infinite scroll for easy browsing
 
-### 📄 Pokémon Detail Page
-- Complete Pokémon info (ID, name, description, types, abilities, size, stats, artwork)
+### 📄 Pokemon Detail Page
+- Complete Pokemon info (ID, name, description, types, abilities, size, stats, artwork)
 - Protected route access (no direct URL access without navigation)
 
 ### 🔗 Evolution Chain
-- Visualize and explore the full evolution chain for each Pokémon
+- Visualize and explore the full evolution chain for each Pokemon
 - Navigate between evolutions easily
 
 ### 🔍 Explore & Search
 - Live search with instant filtering
-- Explore and discover Pokémon by name or ID
+- Explore and discover Pokemon by name or ID
 
 ### 🖼️ UI & Experience
 - Smooth animations via **Framer Motion**
