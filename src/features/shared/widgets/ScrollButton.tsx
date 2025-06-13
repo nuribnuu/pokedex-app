@@ -68,10 +68,8 @@ export const ScrollButton: React.FC = () => {
             cursor-pointer
             bg-white
             hover:bg-neutral-100
+            ${isAtBottom ? 'md:mb-20' : ''}
           `}
-          style={{
-            marginBottom: isAtBottom ? '5rem' : undefined,
-          }}
           aria-label={isAtBottom ? 'Scroll to top' : 'Scroll to bottom'}
         >
           {isAtBottom ? (
