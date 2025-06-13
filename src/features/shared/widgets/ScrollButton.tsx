@@ -9,6 +9,8 @@ export const ScrollButton: React.FC = () => {
   const [isNearBottom, setIsNearBottom] = useState(false);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const innerHeight = window.innerHeight;
@@ -18,11 +20,15 @@ export const ScrollButton: React.FC = () => {
       setIsAtBottom(scrollY + innerHeight >= scrollHeight - 10);
     };
 
+    // Initial check
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToBottom = () => {
+    if (typeof window === 'undefined') return;
     window.scrollTo({
       top: document.documentElement.scrollHeight,
       behavior: 'smooth',
@@ -30,6 +36,7 @@ export const ScrollButton: React.FC = () => {
   };
 
   const scrollToTop = () => {
+    if (typeof window === 'undefined') return;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
