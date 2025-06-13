@@ -5,54 +5,82 @@ import { ChevronLeftIcon } from '../ui/Icons';
 import { Button } from '../ui/Button';
 
 export const ScrollButton: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
-  const [isNearBottom, setIsNearBottom] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const innerHeight = window.innerHeight;
-      const scrollHeight = document.documentElement.scrollHeight;
-
-      setIsNearBottom(scrollY + innerHeight >= scrollHeight - 100);
-      setIsAtBottom(scrollY + innerHeight >= scrollHeight - 10);
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      // Jika sudah di bawah (atau hampir di bawah, toleransi 2px)
+      setIsAtBottom(scrollY + windowHeight >= docHeight - 2);
     };
 
-    // Initial check
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-
-    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToBottom = () => {
-    if (typeof window === 'undefined') return;
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
+  const handleScrollClick = () => {
+    if (isAtBottom) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth',
+      });
+    }
   };
 
-  const scrollToTop = () => {
-    if (typeof window === 'undefined') return;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  if (!mounted) return null;
 
   return (
-    <Button
-      onClick={isAtBottom ? scrollToTop : scrollToBottom}
-      className={`fixed bottom-6 right-6 md:${
-        isNearBottom ? 'bottom-16' : 'bottom-10'
-      } p-3 !size-16 rounded-full shadow-lg flex items-center justify-center z-50 transition-all duration-300 cursor-pointer`}
-      aria-label={isAtBottom ? 'Scroll to top' : 'Scroll to bottom'}
+    <div
+      className='fixed right-0 left-0 pointer-events-none'
+      style={{ zIndex: 50 }}
     >
-      {isAtBottom ? (
-        <ChevronLeftIcon className='rotate-90' />
-      ) : (
-        <ChevronLeftIcon className='rotate-270' />
-      )}
-    </Button>
+      <div className='container mx-auto max-w-4xl flex justify-end'>
+        <Button
+          onClick={handleScrollClick}
+          className={`
+            pointer-events-auto
+            fixed
+            bottom-8
+            right-8
+            md:bottom-12
+            md:right-12
+            p-3
+            !size-16
+            rounded-full
+            shadow-lg
+            flex
+            items-center
+            justify-center
+            transition-all
+            duration-300
+            cursor-pointer
+            bg-white
+            hover:bg-neutral-100
+          `}
+          style={{
+            marginBottom: isAtBottom ? '5rem' : undefined,
+          }}
+          aria-label={isAtBottom ? 'Scroll to top' : 'Scroll to bottom'}
+        >
+          {isAtBottom ? (
+            <ChevronLeftIcon className='rotate-90' />
+          ) : (
+            <ChevronLeftIcon className='rotate-270' />
+          )}
+        </Button>
+      </div>
+    </div>
   );
 };
