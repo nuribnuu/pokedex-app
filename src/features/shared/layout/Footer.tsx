@@ -7,6 +7,7 @@ import {
   LinkedInIcon,
   WhatsAppIcon,
   MailIcon,
+  GlobeIcon,
 } from '../ui/Icons';
 import Link from 'next/link';
 
@@ -15,6 +16,14 @@ export const Footer = () => {
     <footer className='w-full border-t border-neutral-300 bg-white py-6 mt-10 md:mt-20'>
       <div className='container mx-auto px-4 flex flex-col md:flex-row justify-center md:justify-between items-center gap-2'>
         <div className='flex gap-2 md:gap-4'>
+          <Link
+            href='https://nuribnuu.vercel.app'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='p-2 bg-neutral-200 rounded-md hover:bg-neutral-300 transition'
+          >
+            <GlobeIcon className='size-5 text-neutral-700' />
+          </Link>
           <Link
             href='https://github.com/nuribnuu'
             target='_blank'
