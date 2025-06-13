@@ -49,7 +49,7 @@ export const Footer = () => {
             <InstagramIcon className='size-5 text-neutral-700' />
           </Link>
           <Link
-            href='https://wa.me/6282324687119'
+            href='https://wa.me/6285866473926'
             target='_blank'
             rel='noopener noreferrer'
             className='p-2 bg-neutral-200 rounded-md hover:bg-neutral-300 transition'
